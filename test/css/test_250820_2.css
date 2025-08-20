@@ -93,6 +93,6 @@ ol, li, ul {
 /* cycle이라는 클래스명을 가진 요소 안에 p태그 안에 있는 strong태그 */
 .cycle p strong {
     font-weight: 700;
-    color: yellow;
+    color: #62d3d9;
     text-decoration: underline;
 }
