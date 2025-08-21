@@ -20,7 +20,7 @@
     margin: 46px 0 0 0;
 }
 .future .list ul {
-    display: flex; /*display: flex 좌우로 배열, 당사자에말고 상위메뉴에 줘야함*/
+    display: flex; /*display: flex 좌우로 배열, 당사자에말고 상위메뉴(ul)에 줘야함*/
     justify-content: space-between;
 }
 .future .list ul li {
