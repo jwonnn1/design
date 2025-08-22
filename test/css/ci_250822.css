@@ -1,0 +1,189 @@
+@import url(common.css);
+.color {
+    margin: 121px 0 0 0;
+}
+.color .tit h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+    margin: 0 0 11px 0;
+}
+.color .list {
+    margin: 45px 0 0 0;
+}
+.color .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.color .list ul li {
+    width: 297px;
+    height: 385px;
+    color: #fff;
+    border-radius: 15px;
+    padding: 42px 38px 0 38px;
+}
+.color .list ul li.bg1 {
+    background-color: #00ad1d;
+}
+.color .list ul li.bg2 {
+    background-color: #008233;
+}
+.color .list ul li.bg3 {
+    background-color: #003087;
+}
+.color .list ul li.bg4 {
+    background-color: #002554;
+}
+.color .list ul li h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 12px 0;
+}
+
+.recruit {
+    margin: 148px 0 0px 0;
+}
+.recruit .wrapper {
+    display: flex; /* tit-photo 좌우에배치하려고 wrapper건듦 */
+    justify-content: space-between;
+    align-items: center;
+}
+.recruit .tit strong {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #003087;
+}
+.recruit .tit h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+    margin: 12px 0 44px 0;
+}
+.recruit .tit a {
+    border: 1px solid #666;
+    padding: 15px 37px 15px 37px;
+    display: inline-block;
+    border-radius: 30px;
+}
+.recruit .photo {
+    overflow: hidden; /*photp는 무조건*/
+    border-radius: 20px;
+    width: 832px;
+    height: 471px;
+}
+.recruit .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overview {
+    margin: 91px 0 0px 0;
+    background-color: #f4f4f4;
+    padding: 132px 0 102px 0;
+}
+.overview .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.overview h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+}
+.overview .inner {
+    width: 900px;
+}
+.overview .inner .tit h2{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+    margin: 0 0 21px 0;
+}
+.overview .inner .list {
+    margin: 45px 0 0 0;
+}
+.overview .inner .list ul li {
+    border-top: 1px solid #ccc;
+    padding: 23px 0 24px 0;
+    display: flex; /*h3-p 좌우에 배치*/
+}
+/* li중에서 마지막 li에만 스타일을줌 */
+.overview .inner .list ul li:last-child {
+    border-bottom: 1px solid #ccc;
+}
+.overview .inner .list ul li h3{
+    font-weight: 700;
+    color: #1d1d1d;
+    width: 323px;
+}
+
+.ship {
+    margin: 131px 0 0 0;
+}
+.ship h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+}
+.ship .list {
+    margin: 32px 0 0 0;
+}
+.ship .list ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 24px ; /*위아래여백 좌우여백*/
+}
+.ship .list ul li {
+    width: 297px;
+    height: 178px;
+    border-radius: 20px;
+    /*배경이미지만 다르고 다른 속성은 같으니까*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ship .list ul li.bg1 {
+    background-image: url(../images/ci_ship01.jpg);
+}
+.ship .list ul li.bg2 {
+    background-image: url(../images/ci_ship02.jpg);
+}
+.ship .list ul li.bg3 {
+    background-image: url(../images/ci_ship03.jpg);
+}
+.ship .list ul li.bg4 {
+    background-image: url(../images/ci_ship04.jpg);
+}
+.ship .list ul li.bg5 {
+    background-image: url(../images/ci_ship05.jpg);
+}
+.ship .list ul li.bg6 {
+    background-image: url(../images/ci_ship06.jpg);
+}
+.ship .list ul li.bg7 {
+    background-image: url(../images/ci_ship07.jpg);
+}
+.ship .list ul li.bg8 {
+    background-image: url(../images/ci_ship08.jpg);
+}
+
+
+
+body {
+    margin: 0 0 200px 0;
+}
