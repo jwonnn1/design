@@ -22,8 +22,7 @@
 
 .main {
     margin: 89px 0 0 0;
-    background: url(../images/line_main2.jpg) no-repeat center center / cover;
-    width: 2000px;
+    background: url(../images/line_main2.jpg) no-repeat center center;
     height: 641px;
     text-align: center;
     color: #fff;
