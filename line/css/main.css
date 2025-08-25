@@ -1,0 +1,41 @@
+@import url(common.css);
+.tit {
+    margin: 112px 0 0 0;
+}
+.tit h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.tit strong {
+    color: #00b900;
+    margin: 16px 0 8px 0;
+    display: inline-block;
+}
+.tit a {
+    display: inline-block;
+    margin: 30px 0 42px 0;
+    border: 1px solid;
+    color: #00b900;
+    padding: 5px 31px 5px 31px;
+}
+
+.main {
+    margin: 89px 0 0 0;
+    background: url(../images/line_main2.jpg) no-repeat center center / cover;
+    width: 2000px;
+    height: 641px;
+    text-align: center;
+    color: #fff;
+}
+.main h1 {
+    font-size: 40px;
+    font-weight: 700;
+    padding: 117px 0 12px 0;
+}
+.main a {
+    display: inline-block;
+    margin: 34px 0 41px 0;
+    border: 1px solid;
+    padding: 5px 23px 5px 23px;
+}
