@@ -106,9 +106,18 @@ header .gnb ul li a {
 
 footer {
     background-color: #2d2d2d;
-    padding: 60px 0 76px 0;
-    color: rgba(255, 255, 255, 0.6); /* 투명한글자(투명도) */
+    padding: 58px 0 76px 0;
+    color: rgba(255, 255, 255, 0.6); /* 투명한 글자(투명도) */
 }
 footer .f_nav ul {
     display: flex;
+    gap: 0 45px; /* 위아래-좌우 여백값 */
+}
+footer .f_info {
+    margin: 10px 0 10px 0;
+    display: flex;
+    gap: 0 23px;
+}
+footer .f_info strong {
+    font-weight: 700;
 }
