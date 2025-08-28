@@ -113,6 +113,10 @@ footer .f_nav ul {
     display: flex;
     gap: 0 45px; /* 위아래-좌우 여백값 */
 }
+footer .f_nav ul li.privacy a {
+    font-weight: 700;
+    /* 문서구조 유지하기위해 li.privacy 붙여서 사용 */
+}
 footer .f_info {
     margin: 10px 0 10px 0;
     display: flex;
