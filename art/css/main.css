@@ -1,3 +1,233 @@
 @import url(default.css);
 @import url(font.css);
 @import url(common.css);
+
+header {
+    height: 80px;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+header .logo {
+    margin: 17px 0 0 0;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    display: block; /* a는 block, 해를끼치면 inline-block*/
+    line-height: 80px;
+    font-size: 19px;
+    color: #222;
+    padding: 0 25px 0 25px;
+}
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center /cover;
+    height: 800px;
+    color: #fff;
+}
+.visual h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.4;
+    padding: 308px 0 17px 0;
+    letter-spacing: -0.02em;
+}
+
+.biz {
+    margin: 162px 0 0 0;
+}
+.biz .art, .sch {
+    margin: 75px 0 0 0;
+}
+.biz .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.biz .txt {
+    width: 511px;
+    margin: 47px 0 0 0;
+}
+.biz .txt strong {
+    color: #C11920;
+    display: block;
+}
+.biz .txt h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: #222;
+    margin: 13px 0 12px 0;
+}
+.biz .txt h2 em {
+    color: #C11920;
+}
+.biz .txt .sub_tit {
+    font-size: 19px;
+    color: #222;
+    margin: 0 0 20px 0;
+}
+.biz .txt .btn_wrap {
+    margin: 31px 0 0 0;
+    display: flex;
+    flex-wrap: wrap; /* 여러줄 허용 */
+    gap: 10px 10px; /*a와 a사이의 여백 */
+}
+.biz .txt .btn_wrap a {
+    display: block;
+    border: 1px solid #C11920;
+    color: #C11920;
+    padding: 8px 31px 7px 33px;
+    border-radius: 50px;
+}
+.biz .txt .btn_wrap a:hover {
+    background-color: #C11920;
+    color: #fff;
+}
+.biz .photo {
+    overflow: hidden;
+    width: 618px;
+    height: 546px;
+    border-radius: 30px;
+}
+.biz .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.commuity {
+    background: url(../images/community_bg.jpg) no-repeat center top / auto 904px;
+    margin: 107px 0 0 0;
+    /* height: 904px; - 콘텐츠가 배경보다 더 길어서 배경의 높이만큼 주면X 
+        background의 높이니까 backgronud 높이를 주면됨 */
+        color: #fff;
+}
+.commuity .news {
+    padding: 118px 0 0 0;
+}
+.commuity .news .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.commuity .news .tit h2 {
+    padding: 31px 0 0 0;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin: 0px 0 2px 0;
+}
+.commuity .news .tit a {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 6px 32px 9px 32px;
+    border-radius: 50px;
+    margin: 34px 0 0 0;
+}
+.commuity .news .tit a:hover {
+    background-color: #fff;
+    color: #8D1F22;
+}
+.commuity .news .list {
+    width: 832px;
+}
+.commuity .news .list ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+}
+.commuity .news .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 21px 0 21px 0;
+}
+.commuity .news .list ul li a h3 {
+    font-size: 22px;
+
+    /* 1줄 제한 - 조건 : 넓이가 제한되어 있어야함 */
+    width: 650px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.commuity .news .list ul li a span {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.commuity .media {
+    margin: 167px 0 0 0;
+}
+.commuity .media .tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.commuity .media .tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+}
+.commuity .media .tit a {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 6px 32px 9px 32px;
+    border-radius: 50px;
+}
+.commuity .media .tit a:hover {
+    background-color: #fff;
+    color: #8D1F22;
+}
+.commuity .media .list {
+    margin: 43px 0 0 0;
+}
+.commuity .media .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.commuity .media .list ul li {
+    width: 404px;
+}
+.commuity .media .list ul li a {
+    display: block;
+}
+.commuity .media .list ul li a .photo {
+    overflow: hidden;
+    height: 227px;
+    border: 2px solid #8D1F22;
+    border-radius: 10px;
+}
+.commuity .media .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* img에는 위 세개만 줘야함 */
+}
+.commuity .media .list ul li a h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #222;
+    letter-spacing: -0.02em;
+    margin: 25px 0 0 0;
+
+    /* 2줄 제한 - 조건 넓이가 있어야함 */
+    line-height: 1.4;
+    height: 2.8em; /* 행간 * 줄수 = 단위는 em */
+    overflow: hidden;
+    /* 호환성이 낮은 일부 브라우저에서만 되는 속성 - css오류검사에서 경고처리됨 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+footer {
+    margin: 115px 0 100px 0;
+    color: #555;
+}
+footer .wrapper {
+    border-top: 1px solid #ededed;
+    padding: 44px 0 16px 0;
+}
