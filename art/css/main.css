@@ -230,4 +230,24 @@ footer {
 footer .wrapper {
     border-top: 1px solid #ededed;
     padding: 44px 0 16px 0;
+    display: flex;
+    justify-content: space-between;
+}
+footer .inner .f_nav ul {
+    display: flex;
+    gap: 0 45px;
+    margin: 0 0 13px 0;
+}
+footer .inner .f_info .group {
+    display: flex;
+    gap: 0 23px;
+}
+footer .inner .copyright {
+    color: #888;
+    margin: 13px 0 0 0;
+}
+footer .family_site button {
+    color: #666;
+    background-color: #f4f4f4;
+    padding: 11px 20px 12px 20px;
 }
