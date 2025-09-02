@@ -1,0 +1,214 @@
+@import url(common.css);
+
+header {
+    background-color: #fff;
+    position: absolute; /*body를 기준으로 정렬*/
+    left: 30px;
+    top: 30px;
+    z-index: 100; /* header 순서 맨위로!! 숫자 높을수록 위로 올라감 */
+    width: calc(100% - 60px);
+    height: 90px;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    display: block;
+    line-height: 90px;
+    padding: 0 25px 0 25px;
+}
+header .gnb ul li a:hover {
+    font-weight: 700;
+    color: #C11920;
+}
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+}
+.visual .wrapper {
+    position: relative; /* button 정렬기준 */
+    height: 750px;
+}
+.visual h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    padding: 339px 0 15px 0;
+}
+.visual button {
+    display: block;
+    width: 150px;
+    height: 150px;
+    background-color: #C11920;
+    border-radius: 50%; /* 동그라미는 50% */
+    font-size: 16px;
+    line-height: 1.3;
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: -75px;
+    bottom: -75px;
+}
+
+.f_nav {
+    margin: 50px 0 50px 0;
+}
+.f_nav ul {
+    display: flex;
+    gap: 0 43px;
+}
+.f_nav ul li {
+    position: relative; 
+    /* before를 li기준으로 정렬하고 싶은데 그렇게 하려면 position속성이 선언되어야함
+        position속성중에서 제일 멀쩡한게 (값을 준것과 안준것의 차이가 거의없음) relative
+        position값이 없을 경우에만 추가 */
+}
+.f_nav ul li::before {
+    content: ""; /* before/after 가상선택자는 반드시 content라는 속성이 있어야 나타남 */
+    width: 1px;
+    height: 11px;
+    background-color: #ccc;
+    display: block;
+    position: absolute; /* li를 기준으로 정렬 */
+    left: -20px;
+    top: 7px;
+}
+/* 첫번쨰 li의 before 숨김처리 */
+.f_nav ul li:first-child::before {
+    display: none; /* html이 아예 없었던것처럼 숨김 */
+}
+
+.btn_svg, .btn_path, .btn_path_ab, .btn_bg, .btn_ico {
+    margin: 50px 0 50px 0;
+}
+.btn_svg h2, .btn_path h2, .btn_path_ab h2, .btn_bg h2, .btn_ico h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 12px 0;
+}
+.btn_svg a {
+    border: 1px solid #555;
+    color: #444;
+    padding: 8px 73px 8px 27px;
+    display: inline-block;
+    border-radius: 30px;
+    position: relative; /* after정렬의 기준 */
+}
+.btn_svg a::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 27px;
+    top: 13px;
+    background: url(../images/btn_arrow.svg) no-repeat center center;
+    width: 14px;
+    height: 14px;
+}
+.btn_svg a:hover {
+    border-color: #C11920;
+    background-color: #C11920;
+    color: #fff;
+}
+.btn_svg a:hover::after {
+    background-image: url(../images/btn_arrow_w.svg);
+}
+
+.btn_path a {
+    border: 1px solid #555;
+    color: #444;
+    padding: 8px 30px 8px 27px;
+    display: inline-flex;
+    border-radius: 30px;
+    gap: 0 37px;
+    align-items: center;
+}
+.btn_path a:hover {
+    border-color: #C11920;
+    background-color: #C11920;
+    color: #fff;
+}
+.btn_path a:hover svg path {
+    fill: #fff;
+}
+
+.btn_path_ab a {
+    border: 1px solid #555;
+    color: #444;
+    padding: 8px 73px 8px 27px;
+    border-radius: 30px;
+    display: inline-flex;
+    position: relative; /* svg 정렬의 기준 */
+}
+.btn_path_ab a svg {
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 30px;
+    top: 14px;
+}
+.btn_path_ab a:hover {
+    border-color: #C11920;
+    background-color: #C11920;
+    color: #fff;
+}
+.btn_path_ab a:hover svg path {
+    fill: #fff;
+}
+
+.btn_bg a {
+    border: 1px solid #555;
+    color: #444;
+    padding: 8px 73px 8px 27px;
+    border-radius: 30px;
+    display: inline-flex;
+    position: relative; /* after 정렬의 기준 */
+}
+.btn_bg a::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 30px;
+    top: 14px;
+    width: 7px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.91042 6.00006L0.622915 1.71256C0.477082 1.56672 0.406596 1.39658 0.411457 1.20214C0.416318 1.0077 0.491665 0.837557 0.637498 0.691723C0.783332 0.54589 0.953471 0.472973 1.14792 0.472973C1.34236 0.472973 1.5125 0.54589 1.65833 0.691723L6.15 5.16881C6.26667 5.28547 6.35417 5.41672 6.4125 5.56256C6.47083 5.70839 6.5 5.85422 6.5 6.00006C6.5 6.14589 6.47083 6.29172 6.4125 6.43756C6.35417 6.58339 6.26667 6.71464 6.15 6.83131L1.65833 11.323C1.5125 11.4688 1.33993 11.5393 1.14062 11.5344C0.941319 11.5296 0.76875 11.4542 0.622916 11.3084C0.477083 11.1626 0.404166 10.9924 0.404166 10.798C0.404166 10.6035 0.477083 10.4334 0.622916 10.2876L4.91042 6.00006Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+}
+.btn_bg a:hover {
+    border-color: #C11920;
+    background-color: #C11920;
+    color: #fff;
+}
+.btn_bg a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.91042 6.00006L0.622915 1.71256C0.477082 1.56672 0.406596 1.39658 0.411457 1.20214C0.416318 1.0077 0.491665 0.837557 0.637498 0.691723C0.783332 0.54589 0.953471 0.472973 1.14792 0.472973C1.34236 0.472973 1.5125 0.54589 1.65833 0.691723L6.15 5.16881C6.26667 5.28547 6.35417 5.41672 6.4125 5.56256C6.47083 5.70839 6.5 5.85422 6.5 6.00006C6.5 6.14589 6.47083 6.29172 6.4125 6.43756C6.35417 6.58339 6.26667 6.71464 6.15 6.83131L1.65833 11.323C1.5125 11.4688 1.33993 11.5393 1.14062 11.5344C0.941319 11.5296 0.76875 11.4542 0.622916 11.3084C0.477083 11.1626 0.404166 10.9924 0.404166 10.798C0.404166 10.6035 0.477083 10.4334 0.622916 10.2876L4.91042 6.00006Z' fill='%23ffffff'/%3E%3C/svg%3E%0A");
+}
+
+.btn_ico a {
+    border: 1px solid #555;
+    color: #444;
+    padding: 8px 73px 8px 27px;
+    border-radius: 30px;
+    display: inline-flex;
+    position: relative; /* i 정렬의 기준 */
+}
+.btn_ico a i {
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 24px;
+    top: 9px;
+    color: #555;
+}
+.btn_ico a:hover {
+    border-color: #C11920;
+    background-color: #C11920;
+    color: #fff;
+    /* 아이콘도 폰트라 글자색상이 적용되서 같이바뀜 */
+}
+.btn_ico a:hover i {
+    color: #fff;
+}
+
+
+body {
+    padding: 0 0 500px 0;
+}
