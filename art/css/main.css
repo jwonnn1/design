@@ -22,6 +22,9 @@ header .gnb ul li a {
     color: #222;
     padding: 0 25px 0 25px;
 }
+header .gnb ul li a:hover {
+    font-weight: 800;
+}
 
 .visual {
     background: url(../images/visual_bg.jpg) no-repeat center center /cover;
@@ -82,6 +85,7 @@ header .gnb ul li a {
     color: #C11920;
     padding: 8px 31px 7px 33px;
     border-radius: 50px;
+    /* transition: 0.5s; 서서히 바뀜 */
 }
 .biz .txt .btn_wrap a:hover {
     background-color: #C11920;
@@ -127,6 +131,7 @@ header .gnb ul li a {
     padding: 6px 32px 9px 32px;
     border-radius: 50px;
     margin: 34px 0 0 0;
+    /* transition: 0.5s; */
 }
 .commuity .news .tit a:hover {
     background-color: #fff;
@@ -152,6 +157,11 @@ header .gnb ul li a {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    /* transition: 0.5s; */
+}
+.commuity .news .list ul li a:hover h3 {
+    /* a에 오버했을때 h3만 색두꺼워짐*/
+    font-weight: 800;
 }
 .commuity .news .list ul li a span {
     font-size: 17px;
@@ -205,6 +215,11 @@ header .gnb ul li a {
     height: 100%;
     object-fit: cover;
     /* img에는 위 세개만 줘야함 */
+    transition: 0.5s;
+}
+.commuity .media .list ul li a:hover .photo img {
+    /* a한테(글자까지) 오버했을때 이미지 커짐 */
+    transform: scale3d(1.2, 1.2, 1);
 }
 .commuity .media .list ul li a h3 {
     font-size: 20px;
@@ -235,8 +250,17 @@ footer .wrapper {
 }
 footer .inner .f_nav ul {
     display: flex;
-    gap: 0 45px;
-    margin: 0 0 13px 0;
+    gap: 0 45px; /* 위아래-좌우 */
+}
+footer .inner .f_nav ul li a {
+    display: block;
+    /* transition: 0.5s; text-decoration: underline 에는 적용안됨 */
+}
+footer .inner .f_nav ul li a:hover {
+    text-decoration: underline;
+}
+footer .inner .f_info {
+    margin: 13px 0 13px 0;
 }
 footer .inner .f_info .group {
     display: flex;
@@ -244,10 +268,13 @@ footer .inner .f_info .group {
 }
 footer .inner .copyright {
     color: #888;
-    margin: 13px 0 0 0;
 }
 footer .family_site button {
-    color: #666;
+    width: 190px;
+    line-height: 49px; /* 행간으로 높이를 주면 글자는 위아래 가운데 */
     background-color: #f4f4f4;
-    padding: 11px 20px 12px 20px;
+    color: #666;
+    display: block;
+    text-align: left;
+    padding: 0 0 0 21px;
 }
