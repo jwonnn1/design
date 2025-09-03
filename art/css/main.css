@@ -104,11 +104,19 @@ header .gnb ul li a:hover {
 }
 
 .commuity {
-    background: url(../images/community_bg.jpg) no-repeat center top / auto 904px;
     margin: 107px 0 0 0;
-    /* height: 904px; - 콘텐츠가 배경보다 더 길어서 배경의 높이만큼 주면X 
-        background의 높이니까 backgronud 높이를 주면됨 */
-        color: #fff;
+    color: #fff;
+    position: relative; /* before 정렬의 기준 */
+}
+.commuity::before {
+    content: ""; /* 필수값 */
+    position: absolute; /* commuity를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 904px;
+    background: url(../images/community_bg.jpg) no-repeat center center / cover;
 }
 .commuity .news {
     padding: 118px 0 0 0;
@@ -116,6 +124,7 @@ header .gnb ul li a:hover {
 .commuity .news .wrapper {
     display: flex;
     justify-content: space-between;
+    position: relative; /* more 정렬의 기준 */
 }
 .commuity .news .tit h2 {
     padding: 31px 0 0 0;
@@ -124,18 +133,6 @@ header .gnb ul li a:hover {
     line-height: 1.4;
     letter-spacing: -0.02em;
     margin: 0px 0 2px 0;
-}
-.commuity .news .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 6px 32px 9px 32px;
-    border-radius: 50px;
-    margin: 34px 0 0 0;
-    /* transition: 0.5s; */
-}
-.commuity .news .tit a:hover {
-    background-color: #fff;
-    color: #8D1F22;
 }
 .commuity .news .list {
     width: 832px;
@@ -167,8 +164,26 @@ header .gnb ul li a:hover {
     font-size: 17px;
     color: rgba(255, 255, 255, 0.8);
 }
+.commuity .news a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 6px 32px 9px 32px;
+    border-radius: 50px;
+    /* transition: 0.5s; */
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: 0;
+    top: 149px;
+}
+.commuity .news a.more:hover {
+    background-color: #fff;
+    color: #8D1F22;
+}
+
 .commuity .media {
     margin: 167px 0 0 0;
+}
+.commuity .media .wrapper {
+    position: relative; /* more의 정렬기준 */
 }
 .commuity .media .tit {
     display: flex;
@@ -180,16 +195,6 @@ header .gnb ul li a:hover {
     font-weight: 800;
     line-height: 1.4;
     letter-spacing: -0.02em;
-}
-.commuity .media .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 6px 32px 9px 32px;
-    border-radius: 50px;
-}
-.commuity .media .tit a:hover {
-    background-color: #fff;
-    color: #8D1F22;
 }
 .commuity .media .list {
     margin: 43px 0 0 0;
@@ -237,6 +242,19 @@ header .gnb ul li a:hover {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
+.commuity .media a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 6px 32px 9px 32px;
+    border-radius: 50px;
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 6px;
+}
+.commuity .media a.more:hover {
+    background-color: #fff;
+    color: #8D1F22;
+}
 
 footer {
     margin: 115px 0 100px 0;
@@ -252,12 +270,39 @@ footer .inner .f_nav ul {
     display: flex;
     gap: 0 45px; /* 위아래-좌우 */
 }
+footer .inner .f_nav ul li {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .inner .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -22px;
+    top: 6px;
+    width: 1px;
+    height: 11px;
+    background-color: #ccc;
+}
+/* 마지막 li의 after 숨김처리 */
+footer .inner .f_nav ul li:last-child::after {
+    display: none;
+}
 footer .inner .f_nav ul li a {
     display: block;
     /* transition: 0.5s; text-decoration: underline 에는 적용안됨 */
+    position: relative; /* after 정렬의 기준 */
 }
-footer .inner .f_nav ul li a:hover {
-    text-decoration: underline;
+footer .inner .f_nav ul li a::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #999;
+    transition: 0.3s;
+}
+footer .inner .f_nav ul li a:hover::after {
+    width: 100%;
 }
 footer .inner .f_info {
     margin: 13px 0 13px 0;
@@ -277,4 +322,18 @@ footer .family_site button {
     display: block;
     text-align: left;
     padding: 0 0 0 21px;
+    position: relative; /* after 정렬의 기준 */
+}
+/* 화살표 그리기 */
+footer .family_site button::after {
+    content: "";
+    position: absolute; /* button을 기준으로 정렬 */
+    width: 6px;
+    height: 6px;
+    border-color: #666;
+    border-style: solid;
+    border-width: 0 0 1px 1px;
+    right: 26px;
+    top: 20px;
+    transform: rotate(-45deg);
 }
