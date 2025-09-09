@@ -239,11 +239,15 @@ header .util .flow::before {
 .tour .list ul {
     display: flex;
     justify-content: space-between;
+    gap: 0 12px;
 }
 .tour .list ul li {
-    width: 15.07%;
+    /* width: 15.07%; */
     /* li한개의 넓이 190px, ul의 넓이 1260px
         li는  ul의 몇 %인가 ? 190*100/1260 = 15.07% */
+    transition: 0.5s;
+    overflow: hidden; /* 집나가는애들 다 짤라버려 */
+    flex: 1 1 0%;
 }
 .tour .list ul li a {
     display: flex; /* h3, p 하단 정렬 */
@@ -278,10 +282,12 @@ header .util .flow::before {
 }
 .tour .list ul li a p {
     display: none; /* 숨김 */
+    white-space: nowrap; /* 줄바꿈 금지 */
 }
 /* li에 on클래스가 들어갔을때 */
 .tour .list ul li.on {
-    width: 51.82%;
+    /* width: 51.82%; */
+    flex: 3 1 0%;
 }
 .tour .list ul li.on a {
     align-items: flex-start;
