@@ -14,7 +14,23 @@ $(document).ready(function(){
    })
 
    $('footer .right_area .family_site button.family_open').on('click', function(){
-        console.log('클릭함')
+        //console.log('클릭함')
         $('footer .right_area .family_site').addClass('open')
    })
+   $('footer .right_area .family_site button.family_close').on('click', function(){
+        //console.log('클릭함')
+        $('footer .right_area .family_site').removeClass('open')
+   })
+
+   /* footer .right_area .top를 클릭하면 브라우저가 상단으로 스크롤 됨 */ 
+   $('footer .right_area .top').on('click', function(){
+        //console.log('클릭')
+        let scrolling = $(window).scrollTop()
+        console.log(scrolling)
+        //$(window).scrollTop(100)
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+   })
+
 })
