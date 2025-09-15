@@ -1,1 +1,4 @@
-console.log('연결')
+
+$(document).ready(function(){
+    // console.log('연결')
+})
