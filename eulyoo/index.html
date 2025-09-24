@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 외부라이브러리 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <!-- 내가직접 생성 -->
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>을유문화사</title>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1 class="logo"><a href="index.html"><span class="blind">을유문화사</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+                <div class="gnb_wrap">
+                    <ul>
+                        <li><a href="#n"><span>을유문화사</span></a></li>
+                        <li><a href="#n"><span>콘텐츠</span></a></li>
+                        <li><a href="#n"><span>을유소식</span></a></li>
+                        <li><a href="#n"><span>독자참여</span></a></li>
+                    </ul>
+                </div>
+                <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+            </nav>
+            <div class="util">
+                <a href="#n" class="mypage"><span class="blind">마이페이지</span></a>
+                <div class="search">
+                    <button class="search_open"><span class="blind">검색열기</span></button>
+                </div>
+            </div>
+        </header><!-- header -->
+        <main class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide popup1"> <!-- 백그라운드 주려고 클래스줌 -->
+                            <div class="wrapper">
+                                <h3>우리의 시작은 곧 <br>시대의 시작</h3>
+                                <p>1945년 광복과 함께 첫걸음을 내디딘 을유문화사. '출판은 곧 건국 사업'이라는 사명감으로 한국 현대 출판의 기틀을 다져왔습니다.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide popup2">
+                            <div class="wrapper">
+                                <h3>법고창신, <br>미래를 향한 새로운 시작</h3>
+                                <p>옛것을 본받아 새로운 것을 창조하는 '법고창신'의 정신으로, 끊임없이 혁신하며 더 나은 출판 문화를 만들어 갑니다.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide popup3">
+                            <div class="wrapper">
+                                <h3>과거와 현재를 잇는 <br>지식의 가교</h3>
+                                <p>오랜 시간 쌓아온 경험을 바탕으로, 이 시대에 꼭 필요한 지식과 지혜를 작가와 독자에게 충실하게 연결합니다.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ctrl_btn">
+                    <button class="btn_prev"><span class="blind">이전버튼</span></button>
+                    <div class="paging"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                    <button class="btn_stop"><span class="blind">일시정지</span></button>
+                    <button class="btn_play"><span class="blind">재생버튼</span></button>
+                    <button class="btn_next"><span class="blind">다음버튼</span></button>
+                </div>
+            </section><!-- visual -->
+            <section class="book">
+                <div class="book_wrap">
+                    <div class="tit">
+                        <h2>오늘의 책</h2>
+                        <p>책 읽는 즐거움, 을유문화사와 함께</p>
+                    </div>
+                    <div class="list">
+                    </div>
+            </section><!-- book -->
+            <section class="interview">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>월간 을터뷰</h2>
+                        <p>독자에게 전하는 특별한 만남, 책과 작가 그리고 그 깊은 이야기</p>
+                    </div>
+                </div>
+            </section><!-- interview -->
+            <section class="story">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>을유 시리즈</h2>
+                        <p>내 취향에 맞는 을유 콘텐츠 찾기</p>
+                    </div>
+                </div>
+            </section><!-- story -->
+        </main>
+        <footer></footer>
+    </div><!-- wrap -->
+</body>
+</html>
