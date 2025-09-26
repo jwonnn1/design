@@ -655,11 +655,15 @@ header.fixed .gnb .gnb_wrap ul li a {
             border: 1px solid #453734;
             border-radius: 50px;
         }
+        .interview .more a span {
+            display: none;
+        }
         .interview .more a::after {
             top: 0;
             width: 100%;
             height: 100%;
         }
+        
 }/* @media */
 
 @media screen and (max-width:589px){ /* 589px이하는 1개 */
