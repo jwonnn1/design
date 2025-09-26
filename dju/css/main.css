@@ -104,7 +104,7 @@
             border-bottom: 1px solid #EDEDED;
         }
         .notice .list ul li:first-child::after {
-            border-top: 1px solid #EDEDED;
+            border-bottom: 1px solid #EDEDED;
         }
         .notice .list ul li a .photo {
             display: none;
@@ -169,7 +169,6 @@
     position: absolute;
     left: 60px;
     top: 37px;
-    z-index: 10;
     width: 45px;
     height: 45px;
     background-position: center center;
@@ -211,7 +210,6 @@
             margin: 44px 0 0 0;
         }
         .dadjeon .list ul {
-            display: flex;
             gap: 16px 16px;
         }
         .dadjeon .list ul li {
@@ -221,6 +219,7 @@
             height: 145px;
         }
         .dadjeon .list ul li a::after {
-            left: 56px;
+            left: 50%;
+            transform: translateX(-23px);
         }
 }
