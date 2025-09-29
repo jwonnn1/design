@@ -261,6 +261,115 @@
         }
 }
 
+.sdi {
+    margin: 156px 0 0 0;
+}
+.sdi .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.3;
+    margin: 0 0 12px 0;
+}
+.sdi .inner {
+    margin: 38px 0 0 0;
+    display: flex;
+    gap: 0 24px;
+}
+.sdi .inner .item {
+    background-color: #f4f4f4;
+    border-radius: 20px;
+    height: 234px;
+    width: calc(25% - 18px);
+    /* 나와 같은 사이즈가 있을때의 사이즈 */
+    padding: 30px 30px 0 30px;
+}
+.sdi .inner .item.career {
+    width: calc(50% - 12px);
+    padding: 0;
+}
+.sdi .inner .item h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 9px 0;
+}
+.sdi .inner .career .career_tit {
+    background-color: #1549A4;
+    color: #fff;
+    border-radius: 20px 20px 0 0;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 0 25px;
+}
+.sdi .inner .career .career_tit h3 {
+    color: #fff;
+}
+.sdi .inner .career .career_list ul {
+    display: flex;
+    margin: 46px 0 0 0;
+}
+.sdi .inner .career .career_list ul li {
+    width: 33.33%;
+    text-align: center;
+}
+.sdi .inner .career .career_list ul li a {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+    display: block;
+}
+.sdi .inner .career .career_list ul li a br {
+    display: none;
+}
+@media screen and (max-width:1024px){
+        .sdi .inner .career .career_list ul li a br {
+            display: block;
+        }
+}/* @media */
+@media screen and (max-width:768px){
+        .sdi {
+            margin: 86px 0 0 0;
+        }
+        .sdi .tit h2 {
+            font-size: 24px;
+            margin: 0 0 6px 0;
+        }
+        .sdi .inner {
+            flex-wrap: wrap; /* 두줄허용 */
+            gap: 16px;
+        }
+        .sdi .inner .item {
+            width: calc(50% - 8px);
+        }
+        .sdi .inner .item.career {
+            width: 100%; /* flex로 정렬되기 때문에 절대 auto안됨 */
+        }
+        .sdi .inner .item h3 {
+            font-size: 22px;
+            margin: 0 0 4px 0;
+        }
+        .sdi .inner .career .career_tit {
+            gap: 0 20px;
+        }
+        .sdi .inner .career .career_list ul li {
+            width: 33.33%;
+            text-align: center;
+        }
+        .sdi .inner .career .career_list ul li a {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1d1d1d;
+            display: block;
+        }
+        .sdi .inner .career .career_list ul li a br {
+            display: none;
+        }
+}/* @media */
+
+
+
 
 body {
     margin: 0 0 500px 0;
