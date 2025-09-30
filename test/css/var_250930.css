@@ -1,0 +1,302 @@
+@import url(common.css);
+
+.test {
+    margin: 50px 0 0 0;
+}
+.test h2 {
+    font-size: 40px;
+}
+.test h2 strong {
+    font-size: 20px;
+}
+.test h3 {
+    font-size: 2.5em;
+}
+.test h3 strong {
+    font-size: 2em;
+}
+.test h4 {
+    font-size: 2.5rem;
+}
+.test h4 strong {
+    font-size: 2rem;
+}
+.test h5 {
+    font-size: 2vw;
+}
+.test h5 strong {
+    font-size: 1vw;
+}
+.test h6 {
+    font-size: clamp(24px, 3vw, 40px);
+}
+
+
+.news {
+    margin: 155px 0 0 0;
+}
+.news .wrapper {
+    display: flex;
+    position: relative; /* more 정렬의 기준 */
+}
+.news .tit {
+    width: 34%;
+    /* 100 - 66% (리스트값) = 34% */
+}
+.news .tit h2 {
+    font-size: var(--tit-font-size);
+    color: var(--tit-color);
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    margin: 0 0 16px 0;
+}
+.news .tit h2 span {
+    display: block; /* span태그와 다른글자가 줄바꿈이 발생 */
+}
+.news .list {
+    width: 66%;
+    /* 832px가 1260px 안에서 몇% 
+        832 / 1260 * 100 = */
+}
+.news .list ul li {
+    border-bottom: 1px solid #ccc;
+}
+.news .list ul li:first-child {
+    border-top: 1px solid #ccc;
+}
+.news .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0 28px 0;
+}
+.news .list ul li a h3 {
+    font-size: var(--h3-font-size);
+    color: var(--tit-color);
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+
+    width: calc(100% - 135px);
+    /* 1줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news .list ul li a span {
+    color: #666;
+}
+.news .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+}
+.news .more a {
+    display: flex; /* span - i 좌우배치 */
+    align-items: center;
+    gap: 0 10px;
+}
+.news .more a i {
+    width: 12px;
+}
+.news .more a i svg {
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width:768px){
+        .news {
+            margin: 93px 0 0 0;
+        }
+        .news .wrapper {
+            display: block;
+        }
+        .news .tit {
+            width: auto;
+            /* 100 - 66% (리스트값) = 34% */
+        }
+        .news .tit h2 {
+            margin: 0;
+        }
+        .news .tit h2 span {
+            display: none; /* span태그와 다른글자가 줄바꿈이 발생 */
+        }
+        .news .tit p {
+            display: none;
+        }
+        .news .list {
+            width: auto;
+            margin: 33px 0 0 0;
+        }
+        .news .list ul li a {
+            display: block;
+            padding: 17px 0 12px 0;
+        }
+        .news .list ul li a h3 {
+            margin: 0 0 5px 0;
+            width: auto;
+            /* 1줄제한 > 무제한으로 변경 */
+            white-space: wrap;
+            overflow: visible;
+        }
+        .news .list ul li a span {
+            color: #767676;
+        }
+        .news .more {
+            left: auto;
+            right: 0;
+            bottom: auto;
+            top: 2px;
+        }
+        .news .more a {
+            justify-content: center;
+            gap: 0;
+            width: 25px;
+            height: 25px;
+            border: 1px solid #555;
+            border-radius: 50%;
+        }
+        .news .more a span {
+            display: none;
+        }
+        .news .more a i {
+            width: 11px;
+        }
+}
+
+.notice {
+    margin: 106px 0 0 0;
+    padding: 156px 0 104px 0;
+    background-color: #1d1d1d;
+    color: rgba(255, 255, 255, 0.8);
+}
+.notice .tit h2 {
+    font-size: var(--tit-font-size);
+    color: #fff;
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    margin: 0 0 16px 0;
+}
+.notice .tit h2 span {
+    display: block; 
+    /* span태그와 다른글자가 줄바꿈이 발생
+        span태그가 block요소가 되면 다른 태그나 글자가 옆에 존재할 수 없음
+        자동으로 다음 글자는 줄이 바뀌게 됨 */
+}
+.notice .wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative; /* more 정렬의 기준 */
+}
+/* tit 넓이 안줌 */
+.notice .list {
+    max-width: 832px; /* 최대넓이 */
+    width: calc(100% - 255px);
+}
+.notice .list ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.notice .list ul li:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.notice .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0 28px 0;
+}
+.notice .list ul li a h3 {
+    font-size: var(--h3-font-size);
+    color: #fff;
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+
+    width: calc(100% - 135px);
+    /* 1줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notice .list ul li a span {
+    color: rgba(255, 255, 255, 0.8);
+}
+.notice .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+}
+.notice .more a {
+    display: flex; /* span - i 좌우배치 */
+    align-items: center;
+    gap: 0 10px;
+}
+.notice .more a i {
+    width: 12px;
+}
+.notice .more a i svg {
+    width: 100%;
+    height: 100%;
+}
+.notice .more a i svg path {
+    fill: rgba(255, 255, 255, 0.8);
+}
+@media screen and (max-width:768px){
+        .notice {
+            margin: 62px 0 0 0;
+            padding: 91px 0 63px 0;
+        }
+        .notice .tit h2 {
+            margin: 0;
+        }
+        .notice .tit h2 span {
+            display: none; 
+            /* span태그와 다른글자가 줄바꿈이 발생
+                span태그가 block요소가 되면 다른 태그나 글자가 옆에 존재할 수 없음
+                자동으로 다음 글자는 줄이 바뀌게 됨 */
+        }
+        .notice .tit p {
+            display: none;
+        }
+        .notice .wrapper {
+            flex-direction: column;
+            gap: 33px 0;
+        }
+        /* tit 넓이 안줌 */
+        .notice .list {
+            max-width: 100%; /* 최대넓이 */
+            width: auto;
+        }
+        .notice .list ul li a {
+            align-items: flex-start; /* center > flex-start */
+            flex-direction: column; /* flex 유지하면서 세로방향 전환 */
+            gap: 5px 0;
+            padding: 17px 0 12px 0;
+        }
+        .notice .list ul li a h3 {
+            width: auto;
+            /* 1줄제한 > 해제 */
+            white-space: wrap;
+            overflow: visible;
+        }
+        .notice .list ul li a span {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .notice .more {
+            position: relative; /* absolute 해제 */
+            left: auto;
+            bottom: auto;
+            /* list하고 more의 여백은 wrapper가 준 gap으로 처리 */
+            display: flex;
+            justify-content: center;
+        }
+        .notice .more a {
+            background-color: #555;
+            border-radius: 30%;
+            padding: 5px 15px 5px 22px;
+            gap: 0 7px;
+        }
+        .notice .more a i {
+            width: 11px;
+        }
+        .notice .more a i svg path {
+            fill: rgba(255, 255, 255, 0.8);
+        }
+}/* @media */
