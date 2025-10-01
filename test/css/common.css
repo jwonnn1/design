@@ -102,10 +102,10 @@ button {
     1260*0.1(5%+5%=10%) + 1260 = 126 + 1260 = 1386
     1260*0.06(3%+3%=6%) + 1260 = 75.6 + 1260 = 1335.6
 */
-@media screen and (max-width:1386px){
+@media screen and (max-width:1320px){
         .wrapper {
             width: auto;
-            margin: 0 5%;
+            margin: 0 30px;
         }
 }
 
