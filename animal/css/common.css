@@ -4,6 +4,7 @@
     --font-size-tit: 40px;
     --font-size-tit2: 28px;
     --font-size-tit3: 24px;
+    --font-size-menu: 21px;
     --font-weight-basic: 400;
     --font-weight-bold: 800;
     --line-height-basic: 1.5;
@@ -13,12 +14,19 @@
     --color-point: #005A98;
     --color-point2: #F7A71E;
     --color-font-gray: #666;
+    --color-line: #ccc;
     --color-white: #fff;
     --color-white80: rgba(255, 255, 255, 0.8);
     --color-white30: rgba(255, 255, 255, 0.3);
     --color-white20: rgba(255, 255, 255, 0.2);
     --color-white10: rgba(255, 255, 255, 0.1);
     --header-h: 90px;
+    --wrapper-margin: 0 30px
+}
+@media screen and (max-width:1024px){
+    :root {
+        --wrapper-margin: 0 23px
+    }
 }
 @media screen and (max-width:768px){
     :root {
@@ -27,7 +35,9 @@
         --font-size-tit: 26px;
         --font-size-tit2: 20px;
         --font-size-tit3: 19px;
+        --font-size-menu: 18px;
         --header-h: 56px;
+        --wrapper-margin: 0 16px
     }
 }
 
@@ -67,19 +77,10 @@ body {
     좌우여백 5% : 1260 + (1260*0.05=63) + (1260*0.05=63) = 63
     좌우여백 3% : 1260 + (1260*0.03=37.8) + (1260*0.03=37.8) = 1336
 */
-@media screen and (max-width:1360px){
+
+@media screen and (max-width:1320px){
     .wrapper {
         width: auto;
-        margin: 0 50px;
+        margin: var(--wrapper-margin);
     }
 }
-@media screen and (max-width:1024px){
-    .wrapper {
-        margin: 0 30px;
-    }
-}
-@media screen and (max-width:768px){
-    .wrapper {
-        margin: 0 16px;
-    }
-}/*@media*/

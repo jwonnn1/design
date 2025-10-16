@@ -1,5 +1,30 @@
 $(document).ready(function(){
 
+    /********************* 시작 :: 지금 pc버전인지 모바일인지 체크 (기준-메뉴상태) *********************/
+
+    let mobile_size = 1024
+    let window_w 
+    let device_status // pc, mobile 구분
+
+    function device_chk(){ //함수를 정의(선언)
+        window_w = $(window).width()
+        if(window_w > mobile_size){ //브라우저 넓이가 1024보다 클때
+            device_status = 'pc'
+        }else{
+            device_status = 'mobile'
+        }
+        console.log(device_status)
+    }
+
+    device_chk() //html의 로딩이 완료된 이후 단 한번실행
+    $(window).resize(function(){ //브라우저가 리사이즈 될 때마다 실행
+        device_chk()
+    })
+
+
+    /********************* 끝 :: 지금 pc버전인지 모바일인지 체크 (기준-메뉴상태) *********************/
+
+    
     /********************* 시작 :: visual swiper *********************/
     let visual_time = 5000
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
@@ -52,5 +77,37 @@ $(document).ready(function(){
         updateCurrent();
     });
     /********************* 끝 :: visual swiper *********************/
+
+
+    /******************** 시작 : pc버전 메뉴오버 ************************
+     * 메뉴(header .gnb)에 마우스를 오버했을때 
+     * header에 menu_pc 클래스 추가
+     * 마우스를 오버한 메뉴의 1차메뉴 li에 over 클래스 추가 (header .gnb .gnb_wrap ul.depth1 > li)
+       > 오버한 li에만 over 클래스줌
+       >>>모든 li에서 over를 빼고 오버한 li에만 over클래스 줌
+     * pc버전에서만 !
+     * 메뉴를 오버해서 바뀐 색상의 영역 내부에서는 오버유지, 그 밖에 나가면 아웃
+    */
+
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
+        if(device_status =='pc'){ //이거 아니면 안해 ! (pc일때만 동작)
+            $('header').addClass('menu_pc')
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+            $(this).addClass('over')
+        } 
+    })
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
+        $(this).removeClass('over')
+    })
+    $('header').on('mouseleave', function(){
+        $(this).removeClass('menu_pc')
+    })
+
+    $('header .util .search .sch_open').on('focusin', function(){
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+    })
+
+    /******************** 끝 : pc버전 메뉴오버 *************************/
+    
 
 })//맨끝
