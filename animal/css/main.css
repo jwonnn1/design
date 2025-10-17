@@ -50,6 +50,18 @@ header .util .mypage i {
     width: 21px;
     margin: 8px 0 0 0;
 }
+
+/* header가 fixed되었을때 */
+header.fixed {
+    background-color: var(--color-white);
+    color: var(--color-main);
+    fill: var(--color-main);
+    border-bottom: 1px solid var(--color-line);
+}
+header.fixed .logo a {
+    background-image: url(../images/logo.svg);
+}
+
 /********************** 시작 : pc버전 메뉴 ***********************/
 /* 1024이하는 메뉴 접힘. 1025이상일때 스타일 */
 @media screen and (min-width:1025px){
@@ -128,7 +140,7 @@ header .util .mypage i {
             border-radius: 50px;
         }
         header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
-            display: block;
+            /* display: block !important; */
         }
 }
 /* 1025이상에서 1280이하 사이에서만 적용 */
@@ -146,12 +158,12 @@ header .util .mypage i {
 @media screen and (max-width:1024px){
             header {
                 padding-right: 0;
-                height: clamp(56px, 10vw, 90px);
+                height: var(--header-var);
             }
             header .logo a {
                 /* width: 92px;
                 height: 17.52px; */
-                width: clamp(92px, 17vw, 176px); /* 최소값, 평소의값, 최대값 */
+                width: clamp(110px, 15vw, 176px); /* 최소값, 평소의값, 최대값 */
             }
             header .util {
                 display: none;
@@ -160,28 +172,102 @@ header .util .mypage i {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: clamp(56px, 10vw, 90px);
-                height: clamp(56px, 10vw, 90px);
+                width: var(--header-var);
+                height: var(--header-var);
             }
             header .gnb .gnb_open i {
                 display: block;
                 width: 33.93%; /* header넓이 56에서 아이콘사이즈(19px)의 % */
             }
             header .gnb .gnb_wrap {
-                display: none;
+                /* display: none; */
                 position: absolute; /* header를 기준으로 정렬 */
-                right: 0;
+                right: -110%;
                 top: 0;
                 width: 100%;
                 height: 100dvh;
                 background-color: var(--color-white);
                 color: var(--color-main);
                 fill: var(--color-main);
+                transition: right 0.5s;
             }
-
             /* 메뉴가 열렸을때 */
             header.menu_mo .gnb .gnb_wrap {
+                /* display: block; */
+                right: 0;
+            }
+            header .gnb .gnb_wrap ul.depth1 {
+                margin: var(--header-var) 0 0 0;
+                height: calc(100dvh - var(--header-var)); 
+                overflow-y: auto; 
+                /* 주어진 높이보다 콘텐츠가 짧으면 스크롤바X
+                    콘텐츠가 더 긴 경우에만 스크롤바가 생김 */
+                padding: 10px 0 0 0;
+                border-top: 1px solid var(--color-point);
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > a {
                 display: block;
+                font-size: 18px;
+                font-weight: var(--font-weight-bold);
+                line-height: var(--line-height-tit);
+                padding: 17px 60px 17px var(--wrapper-margin-side);
+                position: relative; /* after 정렬의 기준 */
+            }
+            header .gnb .gnb_wrap ul.depth1 > li.open > a {
+                color: var(--color-point);
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > a::after {
+                content: "";
+                position: absolute;
+                right: calc(var(--wrapper-margin-side) + 1%);
+                top: 19px;
+                width: 18px;
+                height: 18px;
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 7' fill='%231D1D1D' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.00006 4.55023L9.57506 0.975228C9.74311 0.807172 9.957 0.723144 10.2167 0.723144C10.4764 0.723145 10.6903 0.807172 10.8584 0.975228C11.0264 1.14328 11.1105 1.35717 11.1105 1.61689C11.1105 1.87662 11.0264 2.09051 10.8584 2.25856L6.64172 6.47523C6.55006 6.56689 6.45075 6.63182 6.34381 6.67002C6.23686 6.70821 6.12228 6.72731 6.00006 6.72731C5.87783 6.72731 5.76325 6.70821 5.65631 6.67002C5.54936 6.63182 5.45006 6.56689 5.35839 6.47523L1.14172 2.25856C0.973668 2.09051 0.88964 1.87662 0.88964 1.61689C0.88964 1.35717 0.973668 1.14328 1.14172 0.975227C1.30978 0.807172 1.52367 0.723144 1.78339 0.723144C2.04311 0.723144 2.257 0.807172 2.42506 0.975227L6.00006 4.55023Z'/%3E%3C/svg%3E%0A");
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                transition: 0.5s;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li.open > a::after {
+                transform: rotate(180deg);
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 7' fill='%23005A98' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.00006 4.55023L9.57506 0.975228C9.74311 0.807172 9.957 0.723144 10.2167 0.723144C10.4764 0.723145 10.6903 0.807172 10.8584 0.975228C11.0264 1.14328 11.1105 1.35717 11.1105 1.61689C11.1105 1.87662 11.0264 2.09051 10.8584 2.25856L6.64172 6.47523C6.55006 6.56689 6.45075 6.63182 6.34381 6.67002C6.23686 6.70821 6.12228 6.72731 6.00006 6.72731C5.87783 6.72731 5.76325 6.70821 5.65631 6.67002C5.54936 6.63182 5.45006 6.56689 5.35839 6.47523L1.14172 2.25856C0.973668 2.09051 0.88964 1.87662 0.88964 1.61689C0.88964 1.35717 0.973668 1.14328 1.14172 0.975227C1.30978 0.807172 1.52367 0.723144 1.78339 0.723144C2.04311 0.723144 2.257 0.807172 2.42506 0.975227L6.00006 4.55023Z'/%3E%3C/svg%3E%0A");
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+                background-color: #f7f7f7;
+                padding: 14px var(--wrapper-margin-side) 14px calc(var(--wrapper-margin-side) + 19px);
+                display: none; /* 1차메뉴를 클릭할때만 나옴 */
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+                display: block;
+                padding: 9px 0;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
+                color: var(--color-point);
+            }
+            header .gnb .gnb_wrap .gnb_logo {
+                position: absolute; /* gnb_wrap기준으로 정렬 */
+                left: var(--wrapper-margin-side);
+                top: 0;
+                width: clamp(110px, 15vw, 176px);
+                height: var(--header-var);
+                background: url(../images/logo.svg) no-repeat center center / contain;
+            }
+            header .gnb .gnb_wrap .gnb_close {
+                position: absolute; /* gnb_wrap기준으로 정렬 */
+                right: 0;
+                top: 0;
+                width: var(--header-var);
+                height: var(--header-var);
+                padding: 5px 0 0 0;
+                
+                display: flex; /* i태그를 가운데 */
+                justify-content: center;
+                align-items: center;
+            }
+            header .gnb .gnb_wrap .gnb_close i {
+                display: block;
+                width: 30%;
             }
 }/* @media */
 
@@ -265,6 +351,7 @@ header .util .mypage i {
 .visual .ctrl_btn .stop i {
     width: 10px;
     margin: 3px 0 0 0;
+    fill: var(--color-white);
 }
 .visual .ctrl_btn .play i {
     width: 8px;
@@ -289,7 +376,7 @@ header .util .mypage i {
         }
         .visual .ctrl_btn {
             left: 16px;
-            bottom: 160px;
+            bottom: 16dvh;
             gap: 0 5px;
         }
         .visual .ctrl_btn .paging {
@@ -299,6 +386,95 @@ header .util .mypage i {
             width: 88px;
         }
 }
+
+.find {
+    background-color: var(--color-bg);
+    color: var(--color-white);
+    padding: 161px 0 104px 0;
+}
+.find h2 {
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    text-align: center;
+}
+.find .tab_list {
+    margin: 31px 0 0 0;
+}
+.find .tab_list ul {
+    display: flex;
+    justify-content: center;
+    gap: 0 20px;
+}
+.find .tab_list ul li button {
+    display: block;
+    padding: 9px 29px 9px 28px;
+    border-radius: 50px;
+    color: var(--color-white80);
+    font-size: var(--font-size-tit2);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+}
+.find .tab_list ul li.active button {
+    background-color: var(--color-point2);
+    color: var(--color-white);
+}
+.find .tab_list ul li.item2.active button {
+    background-color: var(--color-point);
+}
+.find .tab_content {
+    margin: 23px 0 0 0;
+}
+.find .tab_content .tab_item {
+    position: relative; /* prev/next 정렬의 기준 */
+}
+.find .tab_content .tab_item .prev {
+    position: absolute;
+    left: -50px;
+    top: 240px;
+    z-index: 10;
+}
+.find .tab_content .tab_item .next {
+    position: absolute;
+    right: -50px;
+    top: 240px;
+    z-index: 10;
+}
+.find .tab_content .tab_item .more {
+    position: absolute;
+    right: 0;
+    top: -55px;
+}
+.find .tab_content .tab_item .prev,
+.find .tab_content .tab_item .next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-white10);
+    border-radius: 50px;
+    fill: var(--color-white80);
+}
+.find .tab_content .tab_item .prev i,
+.find .tab_content .tab_item .next i {
+    display: block;
+    width: 16px;
+    margin: 5px 0 0 0;
+}
+.find .tab_content .tab_item .more {
+    display: flex;
+    gap: 0 7px;
+    align-items: center;
+    fill: var(--color-white80);
+}
+.find .tab_content .tab_item .more i {
+    display: block;
+    width: 14px;
+    margin: 4px 0 0 0;
+}
+
+
 
 footer {
     margin: 1500px 0 0 0;
