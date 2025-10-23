@@ -1,0 +1,143 @@
+/************************** 
+* 파일명 : main.css
+* 작성자 : 윤지원
+* 작성일 : 25-10-23
+* 설  명 : index파일 (메인페이지)에서만 호출하는 css
+           메인페이지 (index)의 스타일이 이 페이지에서 선언됨 (header/footer 제외)
+           default.css (태그의 초기화 - 브라우저가 주는 기본스타일 삭제)
+           common.css (wrapper, blind 처럼 모든 페이지에서 반복되는 기본스타일 
+           - 변수도 여기서 선언, 변수 너무 많으면 var이라는 파일을 분리도 함)
+           layout.css (문서의 구조에 영향을 끼치는 요소 - header/footer가 들어감)
+**************************/
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+
+.visual {
+    position: relative; /* scroll 정렬의 기준 */
+}
+.visual .popup .slide {
+    position: relative; /* photo정렬의 기준 */
+    height: 100dvh;
+    /* txt를 slide의 하단에 배치 - 넓이가 100% */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.visual .popup .slide .photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1; /* 글자 위로가도록 */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.visual .popup .slide .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale3d(1.2, 1.2, 1);
+    transition: 2s;
+}
+.visual .popup .slide.slick-active .photo img {
+    transform: scale3d(1, 1, 1);
+    transition-delay: 0.5s;
+}
+.visual .popup .slide .txt {
+    color: #fff;
+    margin-bottom: 247px;
+}
+.visual .popup .slide .txt h3 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 12px 0;
+}
+@media screen and (min-width:769px){
+        .visual .popup .slide .txt .line {
+            display: block;
+            overflow: hidden;
+        }
+        .visual .popup .slide .txt .line span {
+            transform: translateY(100%);
+            display: block;
+            transition: transform 1s;
+            transition-delay: 0.5s;
+        }
+        .visual .popup .slide.slick-active .txt .line span { /* 현재 보이는 팝업일때 */
+            transform: translateY(0);
+        }
+}
+.visual .scroll {
+    position: absolute; /* visual을 기준으로 정렬 */
+    right: -9px;
+    bottom: 125px;
+    color: #fff;
+    font-size: 1.5rem;
+    transform: rotate(90deg);
+}
+.visual .scroll::before {
+    content: "";
+    position: absolute;
+    right: -84px;
+    bottom: 13px;
+    width: 78px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.visual .scroll::after {
+    content: "";
+    position: absolute;
+    right: -27px;
+    bottom: 12.5px;
+    width: 20px;
+    height: 1.5px;
+    background-color: #fff;
+    animation: scroll 3s linear infinite;
+}
+@keyframes scroll {
+    0% { right: -27px; }
+    50% { right: -84px; }
+    100% { right: -27px; }
+}
+@media screen and (max-width:1024px){
+        .visual .popup .slide .txt h3 {
+            font-size: 4.4rem;
+            margin: 0 0 18px 0;
+        }
+}
+@media screen and (max-width:768px){
+        .visual .popup .slide {
+            height: 700px;
+        }
+        .visual .popup .slide .txt {
+            margin-bottom: 56px;
+        }
+        .visual .popup .slide .txt h3 {
+            font-size: 3.2rem;
+            margin: 0 0 18px 0;
+        }
+        .visual .popup .slide .txt h3,
+        .visual .popup .slide .txt p {
+            opacity: 0;
+            transition: transfrom 1s, opacity 1s;
+            transition-delay: 0.3s;
+        }
+        .visual .popup .slide.slick-active .txt h3,
+        .visual .popup .slide.slick-active .txt p {
+            opacity: 1;
+        }
+        .visual .popup .slide .txt .line {
+            display: block;
+        }
+        .visual .scroll {
+            display: none;
+        }
+}/* @media */
+
+
+footer {
+    margin: 500px 0 0 0;
+}
