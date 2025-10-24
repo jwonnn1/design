@@ -4,12 +4,18 @@
     --color-main: #E00036;
     --color-font-gray: #666;
     --header-h: 90px;
-    --wrapper-margin: 0 30px;
+    --wrapper-margin-side: 30px;
+    --wrapper-margin: 0 var(--wrapper-margin-side);
+}
+@media screen and (max-width:1024px){
+    :root {
+        --header-h: 70px;
+    }
 }
 @media screen and (max-width:768px){
     :root {
         --header-h: 56px;
-        --wrapper-margin: 0 16px;
+        --wrapper-margin-side: 16px;
     }
 }
 
