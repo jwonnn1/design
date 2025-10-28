@@ -16,7 +16,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--wrapper-margin);
+    padding: var(--wrapper-margin-side);
     transition: transform 0.5s;
 }
 header .logo a {
