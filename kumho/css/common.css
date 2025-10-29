@@ -5,6 +5,7 @@
     --color-font-gray: #666;
     --header-h: 90px;
     --wrapper-margin-side: 30px;
+    --wrapper-margin-side-m: -30px;
     --wrapper-margin: 0 var(--wrapper-margin-side);
 }
 @media screen and (max-width:1024px){
