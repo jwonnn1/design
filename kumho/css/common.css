@@ -4,9 +4,7 @@
     --color-main: #E00036;
     --color-font-gray: #666;
     --header-h: 90px;
-    --wrapper-margin-side: 30px;
-    --wrapper-margin-side-m: -30px;
-    --wrapper-margin: 0 var(--wrapper-margin-side);
+    --wrapper-margin: 30px;
 }
 @media screen and (max-width:1024px){
     :root {
@@ -16,7 +14,7 @@
 @media screen and (max-width:768px){
     :root {
         --header-h: 56px;
-        --wrapper-margin-side: 16px;
+        --wrapper-margin: 16px;
     }
 }
 
@@ -70,7 +68,7 @@ body {
 @media screen and (max-width:1320px){
     .wrapper {
         width: auto;
-        --wrapper-margin-side: 30px;
+        margin: 0 var(--wrapper-margin);
     }
 }
 

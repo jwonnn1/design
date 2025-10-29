@@ -668,7 +668,7 @@ section .tit h2 {
         .service .list {
             background: url(../images/main/service_mo.jpg) no-repeat center center / cover;
             color: #fff;
-            padding: 51px var(--wrapper-margin-side);
+            padding: 51px var(--wrapper-margin);
         }
         .service .list ul {
             display: flex;
