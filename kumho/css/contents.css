@@ -128,8 +128,3 @@
             height: 47px;
         }
 }/*@media*/
-@media screen and (max-width:450px){
-    .ctn_ceo .ceo_head .ceo_txt p br {
-        display: none;
-    }
-}
