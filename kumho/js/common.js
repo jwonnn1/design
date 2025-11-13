@@ -22,10 +22,12 @@ $(document).ready(function(){
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
         if(device_status == 'pc'){
             $('header').addClass('menu_pc')
+            
         }
     })
     $('header .gnb .gnb_bg').on('mouseenter', function(){
         $('header').removeClass('menu_pc')
+        
     })
     $('header .util .lang').on('focusin', function(){
         $('header').removeClass('menu_pc')
