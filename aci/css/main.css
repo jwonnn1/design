@@ -63,7 +63,7 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
     color: var(--color-point);
 }
 
-@media screen and (min-width:1025px){ 
+@media screen and (min-width:1025px){ /* pc버전일때 */
     header .gnb_wrap .gnb_logo,
     header .gnb_wrap .gnb_close {
         display: none;
