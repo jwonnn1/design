@@ -66,6 +66,60 @@ $(document).ready(function(){
         scroll_chk() //스크롤 할때마다 실행
     })
 
+
+    /* 모바일 메뉴 열기 */
+    $('.gnb_open').on('click', function(){
+        if(device_status == 'mobile'){
+            $('header').addClass('menu_mo')
+        }
+    })
+
+    /* 모바일 메뉴 닫기 */
+    $('.gnb_close, .gnb_bg').on('click', function(){
+        if(device_status == 'mobile'){
+            $('header').removeClass('menu_mo')
+        }
+    })
+
+    /* 2차메뉴 열고 닫기 */ 
+    // $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+    //     e.preventDefault();
+    
+    //     let li = $(this).parent('li');
+    //     let depth2 = li.children('ul.depth2');
+    
+    //     if(li.hasClass('on')){
+    //         li.removeClass('on');
+    //         depth2.slideUp(200);
+    //     }else{
+    //         li.addClass('on');
+    //         depth2.slideDown(200);
+    //         li.siblings('li').removeClass('on')
+    //            .children('ul.depth2').slideUp(200);
+    //     }
+    // });
+
+    /* MOBILE에서 depth1 click → depth2 toggle */
+    $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+        if(device_status !== 'mobile') return; // pc에서는 클릭 막음
+
+        e.preventDefault();
+
+        let li = $(this).parent('li');
+        let depth2 = li.children('ul.depth2');
+
+        if(li.hasClass('on')){
+            li.removeClass('on');
+            depth2.slideUp(200);
+        }else{
+            li.addClass('on');
+            depth2.slideDown(200);
+            li.siblings('li')
+            .removeClass('on')
+            .children('ul.depth2').slideUp(200);
+        }
+    });
+
     /******** header 끝 *********/
     
 
@@ -104,8 +158,7 @@ $(document).ready(function(){
             },
         },
         //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
-        
-       
+               
         navigation: {
             nextEl: '.performance .ctrl_btn .btn_next',
             prevEl: '.performance .ctrl_btn .btn_prev',
@@ -118,29 +171,44 @@ $(document).ready(function(){
      * .find .tab_list ul li 를 클릭했을떄 첫번째를 클릭하면 active 클래스를 주고
      * li에서 어떤 tab_item을 보이게 해야하는지 단서를 줘야함
      * .find .tab_content .tab_item 에서 첫번째 요소에 active 클래스 줌
+     * 
+     * 
     */
 
-    let tab_name
-    $('.find .tab_list ul li').on('click', function(){
-        //클릭한 li에만 active 클래스주기
-        $('.find .tab_list ul li').removeClass('active')
-        $(this).addClass('active')
-
-        //클릭한 li의 button에다가 선택됨이라고 글자쓰기
-        $('.find .tab_list ul li button span').text('')
-        $(this).find('button span').text('선택됨')
-
-        //클릭한 li와 관련된 tab_content tab_item 에 active 클래스 주기
-        tab_name = $(this).attr('data-tab')
-        // console.log(tab_name)
-        $('.find .tab_content .tab_item').removeClass('active')
-        //find로 찾을때 클래스명이면 .이 추가되어야함, 내가 갖고온 이름은 .이 없음
-        $('.find .tab_content').find('.' + tab_name).addClass('active')
-
-        //선택된 tab_item의 title에  '선택됨'이라고 써주기
-        $('.find .tab_content .tab_item').attr('title', '')
-        $('.find .tab_content').find('.' + tab_name).attr('title', '선택됨')
-    })
+    $(function() {
+        let tab_name;
+    
+        $('.academy .tab_list ul li').on('click', function() {
+            // 이미 선택된 탭이면 아무 동작 안 함
+            if ($(this).hasClass('active')) return;
+    
+            // 1. 클릭한 li에만 active 클래스 주기
+            $('.academy .tab_list ul li').removeClass('active');
+            $(this).addClass('active');
+    
+            // 2. 클릭한 li의 button span에 '선택됨' 표시
+            $('.academy .tab_list ul li button span').text('');
+            $(this).find('button span').text('선택됨');
+    
+            // 3. 클릭한 li와 관련된 tab_item에 active 클래스 주기 (바로 전환)
+            tab_name = $(this).attr('data-tab');
+    
+            // 모든 tab_item active 제거
+            $('.academy .tab_content .tab_item').removeClass('active').hide();
+    
+            // 선택한 tab_item active 및 표시
+            $('.academy .tab_content').find('.' + tab_name)
+                .addClass('active')
+                .attr('title', '선택됨')
+                .show();
+    
+            // 나머지 tab_item title 초기화
+            $('.academy .tab_content .tab_item').not('.' + tab_name).attr('title', '');
+        });
+    
+        // 초기 상태: 활성화된 탭만 보이도록
+        $('.academy .tab_content .tab_item').not('.active').hide();
+    });
     /******************** end : 일반예술 tap *************************/
 
    

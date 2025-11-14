@@ -197,7 +197,7 @@ header.up:not(.menu_pc, .menu_mo) {
         }
 }/*@media*/
 
-@media screen and (max-width:280px) and (min-width:1025px){ /* 1280 - 1024 사이 */
+@media screen and (max-width:1280px) and (min-width:1025px){ /* 1280 - 1024 사이 */
         header .gnb .gnb_wrap ul.depth1 > li > a {
             padding: 0 1.4em;
         }
