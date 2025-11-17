@@ -211,6 +211,12 @@ $(document).ready(function(){
     });
     /******************** end : 일반예술 tap *************************/
 
-   
+   /* top버튼을 클릭하면 상단으로 이동 */ 
+   $('footer .top').on('click', function(){
+    $('html, body').animate({
+        scrollTop: 0
+    }, 500) //브라우저를 최상단으로 0.5초만에 올림
+    })
+
 
 }) //맨끝
