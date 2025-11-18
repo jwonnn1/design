@@ -668,12 +668,18 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
     position: absolute;
     left: -210px;
     top: -84px;
-    width: calc(50% + 27.2353em);
+    /* width: calc(50% + 27.2353em); */
     overflow: hidden;
-    box-shadow: 3, 3, 3, 0 ;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3) ;
+    display: inline-block;
 }
 .academy .tab_content .tab_item .list .photo img {
-    max-width: 100%;
+    /* max-width: 100%;
+    object-fit: cover;
+    transition: 0.5s; */
+    display: block;
+    width: auto;      /* 원본 이미지 비율 유지 */
+    height: auto;     /* 원본 크기 유지 */
     object-fit: cover;
     transition: 0.5s;
 }
@@ -747,14 +753,19 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
     display: none;
 }
 @media screen and (max-width:1320px) and (min-width:1025px) {
+    .academy .tab_content .tab_item .list .photo {
+        width: calc(50% + 17.2353em);
+    }
     .academy .tab_content .tab_item .list .photo img {
-        width: 80%;
+        width: 100%;
     }
     .academy .tab_content .tab_item .list .txt {
         display: flex;
         flex-direction: column;
         padding: 40px 40px 0 50px;
     }
+
+    
 }
 @media screen and (max-width:1024px){
         .academy {
@@ -794,10 +805,10 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
         }
         .academy .tab_content .tab_item .list .photo {
             position: static;
-            width: auto;
+            width: 100%;
             height: auto;
             overflow: hidden;
-            box-shadow: 3, 3, 3, 0 ;
+            box-shadow: none;
         }
         .academy .tab_content .tab_item .list .photo img {
             width: 100%;
@@ -858,7 +869,8 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
     padding: 10.3529em 4.7059em 200px 4.7059em;
     display: flex;
     justify-content: space-between;
-    gap: 0 5%;
+    align-items: stretch;
+    gap: 0 4%;
     position: relative;
 }
 .notice h2 {
@@ -875,7 +887,10 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
     background-color: var(--color-title);
 }
 .notice .notice_left {
-    flex: 0 0 60%;
+    flex: 1 1 calc(65% - 5%); /* 60% 고정 비율 */
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
     position: relative;
 }
 .notice .notice_left .list ul {
@@ -898,10 +913,10 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
     display: block;
 }
 .notice .notice_left .list ul li a h3 {
-    font-size: 20px;
+    font-size: 1.1765em;
     font-weight: 700;
     line-height: 1.3;
-    margin-bottom: 65px;
+    margin-bottom: 1.25em;
 
     height: 2.6em;
     overflow: hidden;
@@ -942,16 +957,18 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
     animation: turn 1s infinite linear ;
 }
 .notice .notice_right {
-    flex: 0 0 40%;
+    flex: 1 1 35%; /* 40% 고정 비율 */
+    display: flex;
+    flex-direction: column;
+    min-width: 480px;
 }
 .notice .notice_right ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2열 고정 */
-    grid-template-rows: repeat(2, auto);   /* 2행 유지 */
+    display: flex;
+    flex-wrap: wrap;
     gap: 16px; /* li 간격 */
 }
 .notice .notice_right ul li {
-    width: 100%;
+    width: calc(50% - 8px);
 }
 .notice .notice_right ul li:nth-child(odd) {
     transform: translateY(13px);
@@ -1046,7 +1063,35 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
     100% {transform: translateX(-50.16%);}
 }
 @media screen and (max-width:1320px){
+    .notice {
+        padding: 10.3529em 3.5294em 200px 3.5294em;
+        gap: 0 3%; /* 좁아지면 간격 줄이기 (선택) */
+    }
+    .notice h2 {
+        margin-bottom: 0.5455em;
+    }
 
+    .notice .notice_left,
+    .notice .notice_right {
+        flex: 1 1 calc(50% - 3%);
+    }
+    .notice .notice_left .list ul li {
+        padding: 25px;
+    }
+    .notice .notice_left .list ul {
+        flex-direction: column;
+    }
+    .notice .notice_left .list ul li {
+        width: 100%;
+    }
+    .notice .notice_left .list ul li:last-child,
+    .notice .notice_left .list ul li:nth-last-child(2),
+    .notice .notice_left .list ul li:nth-last-child(3) {
+        display: none;
+    }
+    .notice .notice_left .list ul li a h3 {
+        margin-bottom: 11px;
+    }
 }
 @media screen and (max-width:1024px){
         .notice {
@@ -1061,24 +1106,12 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
         .notice h2::after {
             display: none;
         }
-        .notice .notice_left {
-            width: 100%;
-        }
-        .notice .notice_left .list ul {
-            flex-direction: column;
-        }
         .notice .notice_left .list ul li {
             width: 100%;
             padding: 30px 25px;
         }
-        .notice .notice_left .list ul li:last-child,
-        .notice .notice_left .list ul li:nth-last-child(2),
-        .notice .notice_left .list ul li:nth-last-child(3) {
-            display: none;
-        }
         .notice .notice_left .list ul li a h3 {
             font-size: 18px;
-            margin-bottom: 11px;
         }
         .notice .notice_left .more {
             top: 0.2em;
@@ -1104,36 +1137,20 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
         .notice .notice_right {
             margin-top: 24px;
             width: 100%;
-            max-width: auto;
+            min-width: auto;
         }
-        
+        .notice .notice_right ul li:nth-child(odd) {
+            transform: translateY(0);
+        }
         .notice .notice_right ul li a {
             display: block;
             position: relative;
         }
         .notice .notice_right ul li a .photo {
-            height: 297px;
+            /* height: 297px; */
             border-radius: 17px;
             overflow: hidden;
             position: relative;
-        }
-        .notice .notice_right ul li a .photo::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(231, 181, 112, 0);
-            transition: background-color 0.3s ease;
-        }
-        .notice .notice_right ul li a:hover .photo::before {
-            background-color: rgba(231, 181, 112, 0.7);;
-        }
-        .notice .notice_right ul li a .photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
         .notice .notice_right ul li a span {
             display: none;
@@ -1150,12 +1167,6 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
         .notice .rolling {
             bottom: 0;
             font-size: 80px;
-        }
-        .notice .rolling p {
-            position: absolute; /* rolling 기준으로 정렬 */
-            left: 0;
-            bottom: 0;
-            transform: translateX(-50.16%);
         }
 }
 
