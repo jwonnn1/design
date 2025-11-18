@@ -870,6 +870,7 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    align-items: center;
     gap: 0 4%;
     position: relative;
 }
@@ -1076,7 +1077,7 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
         flex: 1 1 calc(50% - 3%);
     }
     .notice .notice_left .list ul li {
-        padding: 25px;
+        padding: 22px;
     }
     .notice .notice_left .list ul {
         flex-direction: column;
@@ -1098,6 +1099,7 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
             padding: 96px 0 120px 0;
             margin: var(--wrapper-margin);
             flex-direction: column;
+            align-items: stretch;
             gap: 0;
         }
         .notice h2 {
