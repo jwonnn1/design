@@ -826,9 +826,9 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
         }
         .academy .tab_content .tab_item .list a {
             display: inline-block;
-            width: auto;
+            width: 40px;
             padding: 0;
-            margin-left: 0;
+            margin-left: auto;
             position: relative;
             left: 50%;
             transform: translateX(-50%);
