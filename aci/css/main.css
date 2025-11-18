@@ -120,9 +120,9 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
         }
 
         header .logo a {
-            width: 122px;
-            height: 36px;
-            background: url(../images/logo_w.svg) no-repeat center/contain;
+            width: 82px;
+            height: 31px;
+            background: url(../images/logo_w.svg) no-repeat center center/contain;
         }
 
         /* OPEN BUTTON */
