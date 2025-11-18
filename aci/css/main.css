@@ -388,7 +388,7 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
 }
 
 .performance {
-    margin: 3.2909em 0 0.5818em 0;
+    margin: 10.6471em 0 0.5818em 0;
 }
 .performance .wrapper {
     position: relative; /* more정렬의 기준 */
@@ -992,6 +992,7 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
     width: 100%;
     height: 100%;
     background-color: rgba(231, 181, 112, 0);
+    border-radius: 17px;
     transition: background-color 0.3s ease;
 }
 .notice .notice_right ul li a:hover .photo::before {
@@ -1173,7 +1174,7 @@ header .gnb .gnb_wrap ul.depth1 > li.over > a {
 }
 
 .rental {
-    margin: 1.9636em 0 0 0;
+    margin: 6.3529em 0 0 0;
 }
 .rental h2 {
     margin: 0 0 0.8364em 0;
