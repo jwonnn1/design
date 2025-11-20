@@ -11,7 +11,6 @@ $(document).ready(function(){
         }else{
             device_status = 'mobile'
         }
-        // console.log(device_status)
     }
 
     device_chk() //문서가 로딩되었을때 한번실행
@@ -56,12 +55,26 @@ $(document).ready(function(){
     //header .site_close  /header에 .site_open 클래스 추가
     //header .gnb .gnb_wrap .gnb_open
     $('header .gnb .gnb_wrap .gnb_open').on('click', function(){
-        $('header').addClass('site_open')
+        $('header').addClass('site_open').removeClass('over_w')
     })
     $('header .site_close').on('click', function(){
         $('header').removeClass('site_open')
     })
 
+    //header .gnb .gnb_wrap ul.depth1 > li 에 오버하면 header에 .over_w 클래스 추가
+    $('header').on('mouseenter', function(){
+        if(!$(this).hasClass('site_open')){
+            $(this).addClass('over_w')
+        }else{
+            $(this).removeClass('over_w')
+        }
+    })
+    $('header').on('mouseleave', function(){
+        $('header').removeClass('over_w')
+    })
+
+
+    
     //스크롤을 내리면 header에 fixed
     let scrolling = $(window).scrollTop() //현재 스크롤된 값
     let prev_scroll //이전에 스크롤된 값
