@@ -374,10 +374,6 @@ header.fixed .gnb .gnb_wrap .gnb_open {
 }
 
 
-
-
-
-
 footer {
-    margin: 1500px 0 0 0;
+    background-color: var(--color-basic);
 }

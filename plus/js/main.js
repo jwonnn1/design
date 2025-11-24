@@ -97,5 +97,73 @@ $(document).ready(function(){
     });
 
     
+    /******************* service 시작 ********************/
+    gsap.registerPlugin(ScrollTrigger);
+    const items = gsap.utils.toArray(".accordion");  //<!-- 고정요소 -->
 
-})
+    items.forEach((item, i) => {
+        const content = item.querySelector(".accordion .conts");  //<!-- 고정요소의 내용 -->
+        const header = item.querySelector(".accordion .tit");   //<!-- 고정요소의 제목 -->
+        gsap.to(content, {
+            height: 0,
+            ease: "none",
+            scrollTrigger: {
+                trigger: item,
+                start: "top " + header.clientHeight * i,
+                endTrigger: ".final",  // 고정요소 하단에 종료를 뜻하는 class
+                end: "top " + header.clientHeight * items.length,
+                pin: true,
+                pinSpacing: false,
+                scrub: true,
+                markers: false,
+                id: i + 1
+            }
+        });
+    });
+   /******************* service 끝 ********************/
+
+    /******************* location 시작 ********************/
+    $('.plus .ctn_list .popup').slick({
+        autoplay: true, //팝업 자동 실행
+        autoplaySpeed: 3000, //팝업이 머무는 시간
+        speed: 500, //팝업 전환 속도
+        dots: true, //하단 페이지 버튼 (true, false)
+        arrows: true,  //다음, 이전팝업 (true, false)
+        pauseOnHover: true, //마우스호버시 일시정지
+        //infinite: false, //무한반복
+        variableWidth: true, //넓이를 자유롭게 설정
+        //slidesToShow: 3, //한번에 보일 팝업 수
+        //slidesToScroll: 1, //한번 드래그에 움직이는 슬라이드 제한
+        swipeToSlide: true, //드래그한만큼 슬라이드 움직이기
+        centerMode: true, //가운데정렬(가운데가 1번)
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                variableWidth: false, //넓이를 자유롭게 설정
+                slidesToShow: 2,
+                centerPadding: '48px', //팝업 좌우에 여백 centerMode: true 일때만 적용
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                variableWidth: false, //넓이를 자유롭게 해제
+                slidesToShow: 1,
+                centerPadding: '60px', //팝업 좌우에 여백 centerMode: true 일때만 적용
+              }
+            }
+        ]
+    });
+    /******************* location 끝 ********************/
+
+
+    AOS.init({
+        offset: 270, // 해당 콘텐츠가 하단에서 몇 px 위로 올라와에 나타나는 효과가 나타날지 셋팅하는 값
+        duration: 1000, // 애니메이션 효과가 작동되는 시간
+        easing: 'ease', // 가속도
+    });
+
+   
+
+}) //맨끝
