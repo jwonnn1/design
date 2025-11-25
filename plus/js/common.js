@@ -70,17 +70,47 @@ $(document).ready(function(){
             // console.log('if ?')
         }else{ //아래로 스크롤됨
             $('header').removeClass('up')
+            $('aside.quick')
             // console.log('else ?')
         }
         if(scrolling > 0){ //스크롤 내림
             $('header').addClass('fixed')
+            $('aside.quick').fadeIn(200)
         }else{ //0이거나 0보다 작은경우 (fixed제거)
             $('header').removeClass('fixed')
+            $('aside.quick').fadeOut(200)
         }
+        
     }
     scroll_chk() //문서가 로딩되고 단한번 실행
     $(window).scroll(function(){
         scroll_chk() //스크롤 할때마다 실행
     })
+
+    /*******************
+	 * 퀵메뉴 열고 닫기
+	 * aside.quick .quick_open 를 클릭하면 aside.quick .quick open
+	 * >>>> aside.quick quick_wrap slideDown() 으로 닫기
+	 * aside.quick .quick_close 를 클릭하면 aside.quick 에 open 삭제
+	 * >>>> aside.quick quick_wrap slideUp() 으로 닫기
+	 *******************/
+
+	$('aside.quick .quick_open').on('click', function(){
+		$('aside.quick').addClass('open')
+		$('aside.quick .quick_wrap').slideDown()
+	})
+	$('aside.quick .quick_close').on('click', function(){
+		$('aside.quick').removeClass('open')
+		$('aside.quick .quick_wrap').slideUp()
+	})
+
+    /* top버튼을 클릭하면 상단으로 이동 */ 
+    $('aside.quick .top_btn .top').on('click', function(){
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500) //브라우저를 최상단으로 0.5초만에 올림
+    })
+
+    
 
 })//맨끝
