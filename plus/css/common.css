@@ -6,13 +6,14 @@
     --color-point: #FFEBD0;
     --color-bg: #F8F3ED;
     --color-bg2: #FAF8FA;
-    --color-menu-bg: rgba(147, 52, 0, 0.9);
+    --color-menu-bg: rgba(147, 52, 0, 0.95);
     --color-w: #fff;
     --color-w10: rgba(255, 255, 255, 0.1);
     --color-w20: rgba(255, 255, 255, 0.2);
     --color-w30: rgba(255, 255, 255, 0.3);
     --color-w60: rgba(255, 255, 255, 0.6);
     --color-w80: rgba(255, 255, 255, 0.8);
+    --color-w90: rgba(255, 255, 255, 0.95);
     --color-b30: rgba(0, 0, 0, 0.3);
     --color-line: #555;
     --color-header: rgba(5, 5, 5, 0.01);

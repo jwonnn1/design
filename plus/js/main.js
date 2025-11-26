@@ -9,15 +9,21 @@
 
 $(document).ready(function(){
 
+    gsap.to("h2.type_target", {
+        duration: 3,
+        text: "Confidence Begins with Your Skin",
+        ease: "none",
+        onComplete() {
+            gsap.to("h2.type_target::after", { opacity: 0, duration: 0.5 }); // 직접 선택 불가
+            // 대신 이렇게 CSS 클래스 활용
+            document.querySelector('h2.type_target').classList.add('cursor-fade');
+        }
+    });
     
 
-
-    gsap.from(".visual .txt_box .txt_wrap", {duration: 3, text: "Confidence Begins with Your Skin"})
-
-
     /******************  slogan 시작 ******************/
-    let slogan = $('.slogan .slogan_head') //글자를 감싸는 영역의 이름
-    let slogan_obj = $('.slogan .slogan_head p span') //각 줄안에 나타날 글자
+    let slogan = $('.slogan') //글자를 감싸는 영역의 이름
+    let slogan_obj = $('.slogan p span') //각 줄안에 나타날 글자
     let slogan_rate_s = 0.3 //처음에 애니메이션 시작할때 글씨가 하단에서 몇 %정도 올라왔을때 애니메이션 시작할 것인지 (1이 100%임)
     let slogan_rate_e = 0.6 //마지막에 애니메이션이 끝날때 마지막 글자가 하단에서 몇 %정도 올라왔을때 종료할 것인지
     let slogan_leng = slogan_obj.length
@@ -69,7 +75,7 @@ $(document).ready(function(){
 
 /******************  introduce 시작 ******************/
 
-    let mobile_size = 1024 //모바일 메뉴 시작 사이즈
+    let mobile_size = 768 //모바일 메뉴 시작 사이즈
     let window_w //브라우저 넓이
     let device_status //현재 pc인지 mobile인지 구분하는 값
 
@@ -83,6 +89,7 @@ $(document).ready(function(){
     }
 
     device_chk() //문서가 로딩되었을때 한번실행
+    
     $(window).resize(function(){
         device_chk() //브라우저가 리사이즈 될때마다 한번씩 실행
     })
@@ -148,11 +155,6 @@ $(document).ready(function(){
         $('.sub_tit .sub_txt').on('click', function(){
             const index = $(this).index(); // 클릭한 sub_txt의 index
             setActive(index);
-    
-            // 모바일에서는 스크롤 이동도 넣으면 UX 좋아짐 (옵션)
-            // $('html, body').stop().animate({
-            //     scrollTop: $('.cont_left').offset().top
-            // }, 400);
         });
 
         setActive(0);

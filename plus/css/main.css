@@ -15,10 +15,14 @@
 @import url(layout.css);
 
 .visual {
-    height: 100dvh;
+    position: relative;
 }
 .visual .visual_wrap {
-    position: relative;
+    height: 100dvh;
+    position: relative; /* video정렬의 기준 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .visual .visual_wrap .video {
     position: absolute;
@@ -26,7 +30,7 @@
     top: 0;
     z-index: -1;
     width: 100%;
-    height: 100dvh;
+    height: 100%;
     overflow: hidden;
     transition-delay: 1s;
 }
@@ -37,69 +41,118 @@
     filter: brightness(90%);
 }
 .visual .visual_wrap .txt_box  {
-    padding-top: 30%;
     text-align: center;
     color: var(--color-w);
-    height:150px;
 }
 .visual .visual_wrap .txt_box .txt_wrap {
     font-size: 80px;
     font-weight: 700;
     line-height: 1.3;
-    margin-top: 10px;
+    padding-top: 10px;
+    display: inline-flex;
+    align-items: center;
+}
+.visual .visual_wrap .txt_box .txt_wrap h2.type_target {
     height: 80px;
+    position: relative;
+    display: inline-block;
+}
+.visual .visual_wrap .txt_box .txt_wrap h2.type_target::after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: #fff;
+    margin-left: 8px;
+    animation: blink 0.8s step-end infinite;
+}
+.visual .visual_wrap .txt_box .txt_wrap .cursor {
+    display: none;
+}
+@keyframes blink {
+    50% { opacity: 0; }
+}
+.visual .scroll_down {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    width: 21px;
+    height: 31px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 21 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='20' height='30' rx='10' stroke='white'/%3E%3C/svg%3E%0A");
+}
+.visual .scroll_down::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 6px;
+    width: 1px;
+    height: 18px;
+    background-color: var(--color-w30);
+}
+.visual .scroll_down::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5px;
+    width: 1px;
+    height: 9px;
+    background-color: var(--color-w);
+    animation: down 1.5s linear infinite;
+}
+@keyframes down {
+    0% { transform:translateY(0) }  /* 애니메이션을 시작할때의 속성 */
+	100% { transform:translateY(100%) } /* 애니메이션이 종료될때의 속성 */
 }
 @media screen and (max-width:1024px){
-        .visual .video {
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: -1;
-            width: 100%;
-            height: 600px;
-            overflow: hidden;
-            transition-delay: 1s;
-        }
-        .visual .txt_box {
-            padding-top: 30%;
-            text-align: center;
-            color: var(--color-w);
-        }
         .visual .visual_wrap .txt_box .txt_wrap {
             font-size: 60px;
-            margin-top: 14px;
+        }
+        .visual .visual_wrap .txt_box .txt_wrap h2 {
             height: 60px;
+        }
+        .visual .scroll_down {
+            bottom: 30px;
+            width: 19px;
+            height: 29px;
+        }
+        .visual .scroll_down::after {
+            height: 16px;
+        }
+        .visual .scroll_down::before {
+            height: 7px;
         }
 }/*@media*/
 @media screen and (max-width:768px){
         .visual .visual_wrap .txt_box .txt_wrap {
-            font-size: 40px;
-            margin-top: 14px;
-            height: 40px;
+            font-size: 45px;
         }
-        .visual .txt_box .txt_wrap h2 {
-            
-            margin-bottom: 14px;
+        .visual .visual_wrap .txt_box .txt_wrap h2 {
+            height: 45px;
         }
 }
 
 .slogan {
-    margin: 225px 0 0 0;
+    margin: 305px 0 ;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.slogan .slogan_head {
     text-align: center;
+    overflow: hidden;
 }
-.slogan .slogan_head p {
+.slogan p {
     position: relative;
     font-size: 45px;
     font-weight: 700;
     color: var(--color-b30);
     white-space: nowrap;
 }
-.slogan .slogan_head p span {
+.slogan p span {
     position: absolute;
     left: 0;
     top: 0;
@@ -110,46 +163,49 @@
 }
 @media screen and (max-width:1024px){
     .slogan {
-        margin: 106px 0 0 0;
+        margin: 136px 0 0 0;
     }
-    .slogan .slogan_item p {
-        font-size: 40px;
+    .slogan p {
+        font-size: 35px;
     }
 }
 @media screen and (max-width:768px){
-    .slogan .slogan_item p {
-        font-size: 26px;
+    .slogan p {
+        font-size: 25px;
+    }
+}
+@media screen and (max-width:500px){
+    .slogan p {
+        font-size: 20px;
     }
 }
 
-.slogan .slogan_cont {
+.clinic {
     width: 100%;
     margin: 201px 0 0 0;
     background: url(../images/equip_bg.jpg) no-repeat center center /cover;
     color: var(--color-w);
     padding: 157px 0 120px 0;
 }
-.slogan .slogan_cont .tit {
+.clinic .tit {
     text-align: center;
 }
-.slogan .slogan_cont .tit h2 {
+.clinic .tit h2 {
     font-size: 40px;
     font-weight: 700;
     line-height: 1.3;
     margin: 0 0 24px 0;
 }
-.slogan .slogan_cont .list {
+.clinic .list {
     margin: 68px 0 0 0;
 }
-.slogan .slogan_cont .list ul {
+.clinic .list ul {
     display: flex;
-    justify-content: space-between;
+    gap: 0 24px;
 }
-.slogan .slogan_cont .list ul li {
+.clinic .list ul li {
     width: 297px;
     height: 297px;
-    background-color: var(--color-w10);
-    border-radius: 50%;
     text-align: center;
     padding-bottom: 63px;
 
@@ -157,8 +213,20 @@
     justify-content: center;
     justify-content: flex-end;
     flex-direction: column;
+
+    position: relative;
 }
-.slogan .slogan_cont .list ul li h3 {
+.clinic .list ul li::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-w10);
+    border-radius: 50%;
+    padding: 50%;
+}
+.clinic .list ul li h3 {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.3;
@@ -166,31 +234,118 @@
     /* padding: 30px 0 0 0; */
     position: relative;
 }
-.slogan .slogan_cont .list ul li h3::after {
+.clinic .list ul li h3::after {
     content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     bottom: 50px;
-    width: 66px;
-    height: 66px;
+    width: 2.0833em;
+    height: 2.0833em;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 52px;
+    /* background-size: 2.1667em; */
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 52 52' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.5921 51.5625C25.0147 51.5625 21.1154 49.9574 17.8943 46.7473C14.6731 43.5371 13.0625 39.6422 13.0625 35.0625V33.5603C9.35 33.0777 6.24479 31.4224 3.74688 28.5945C1.24896 25.767 0 22.423 0 18.5625V2.75H8.25V0H12.375V9.625H8.25V6.875H4.125V18.5625C4.125 21.5875 5.20208 24.1771 7.35625 26.3312C9.51042 28.4854 12.1 29.5625 15.125 29.5625C18.15 29.5625 20.7396 28.4854 22.8938 26.3312C25.0479 24.1771 26.125 21.5875 26.125 18.5625V6.875H22V9.625H17.875V0H22V2.75H30.25V18.5625C30.25 22.423 29.001 25.767 26.5031 28.5945C24.0052 31.4224 20.9 33.0777 17.1875 33.5603V35.0625C17.1875 38.5 18.3931 41.4219 20.8044 43.8281C23.2157 46.2344 26.1438 47.4375 29.5886 47.4375C33.0261 47.4375 35.948 46.2344 38.3543 43.8281C40.7605 41.4219 41.9636 38.5 41.9636 35.0625V30.6151C40.518 30.1884 39.3282 29.3572 38.3941 28.1215C37.4596 26.8858 36.9923 25.4799 36.9923 23.9037C36.9923 21.9503 37.6766 20.2897 39.0452 18.9221C40.4133 17.5544 42.0748 16.8706 44.0296 16.8706C45.9839 16.8706 47.6442 17.5544 49.0105 18.9221C50.3768 20.2897 51.0599 21.9503 51.0599 23.9037C51.0599 25.4799 50.5927 26.8858 49.6581 28.1215C48.7241 29.3572 47.5342 30.1884 46.0886 30.6151V35.0625C46.0886 39.6422 44.4836 43.5371 41.2734 46.7473C38.0632 49.9574 34.1694 51.5625 29.5921 51.5625ZM44.0261 26.8125C44.8406 26.8125 45.529 26.5313 46.0914 25.9689C46.6538 25.4066 46.9349 24.7181 46.9349 23.9037C46.9349 23.0892 46.6538 22.401 46.0914 21.8391C45.529 21.2767 44.8406 20.9956 44.0261 20.9956C43.2117 20.9956 42.5233 21.2767 41.9609 21.8391C41.3985 22.401 41.1173 23.0892 41.1173 23.9037C41.1173 24.7181 41.3985 25.4066 41.9609 25.9689C42.5233 26.5313 43.2117 26.8125 44.0261 26.8125Z' /%3E%3C/svg%3E%0A");
 }
-.slogan .slogan_cont .list ul li h3.list_02::after {
-    background-size: 47px;
+.clinic .list ul li h3.list_02::after {
+    background-size: 1.9583em;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 47 41' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40.1926V34.0787C0 32.7321 0.36575 31.485 1.09725 30.3373C1.82875 29.1896 2.80637 28.3074 4.03012 27.6904C6.69533 26.3929 9.38002 25.4111 12.0842 24.7452C14.7884 24.0788 17.5207 23.7279 20.2812 23.6926C20.3766 23.7806 20.4664 23.8599 20.5508 23.9305C20.6355 24.0011 20.7343 24.0804 20.8471 24.1684C20.5368 24.7193 20.3042 25.3082 20.1493 25.9352C19.9939 26.5627 19.9162 27.1902 19.9162 27.8176C17.5118 27.8809 15.1365 28.2086 12.7903 28.8007C10.444 29.3934 8.1549 30.2502 5.92281 31.3713C5.3696 31.6711 4.93167 32.0579 4.609 32.5318C4.28633 33.0062 4.125 33.5218 4.125 34.0787V36.0676H23.7133L27.8383 40.1926H0ZM20.625 19.25C17.9781 19.25 15.7124 18.3077 13.8277 16.423C11.9426 14.5379 11 12.2719 11 9.625C11 6.97813 11.9426 4.71235 13.8277 2.82769C15.7124 0.942563 17.9781 0 20.625 0C23.2719 0 25.5376 0.942563 27.4223 2.82769C29.3074 4.71235 30.25 6.97813 30.25 9.625C30.25 12.2719 29.3074 14.5379 27.4223 16.423C25.5376 18.3077 23.2719 19.25 20.625 19.25ZM20.625 15.125C22.1375 15.125 23.4323 14.5865 24.5094 13.5094C25.5865 12.4323 26.125 11.1375 26.125 9.625C26.125 8.1125 25.5865 6.81771 24.5094 5.74063C23.4323 4.66354 22.1375 4.125 20.625 4.125C19.1125 4.125 17.8177 4.66354 16.7406 5.74063C15.6635 6.81771 15.125 8.1125 15.125 9.625C15.125 11.1375 15.6635 12.4323 16.7406 13.5094C17.8177 14.5865 19.1125 15.125 20.625 15.125ZM36.3474 40.1926L27.4629 31.3081C26.9023 30.7471 26.5093 30.1524 26.2838 29.524C26.0583 28.8952 25.9456 28.2663 25.9456 27.6375C25.9456 26.2808 26.4305 25.0727 27.4003 24.013C28.3706 22.9533 29.615 22.4235 31.1334 22.4235C32.326 22.4235 33.2631 22.6992 33.9446 23.2506C34.6262 23.8024 35.4271 24.5385 36.3474 25.4588C37.2114 24.5949 37.9922 23.873 38.6898 23.2932C39.3869 22.7134 40.3485 22.4235 41.5745 22.4235C43.1383 22.4235 44.3919 22.9593 45.3351 24.0309C46.2784 25.1025 46.75 26.3168 46.75 27.6739C46.75 28.3096 46.6258 28.9456 46.3774 29.5817C46.1285 30.2175 45.7467 30.7929 45.232 31.3081L36.3474 40.1926Z' /%3E%3C/svg%3E%0A");
 }
-.slogan .slogan_cont .list ul li h3.list_03::after {
-    background-size: 50px;
+.clinic .list ul li h3.list_03::after {
+    background-size: 2.0833em;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 50 47' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.968 21.2541C0.587125 20.8452 0.396688 20.3596 0.396688 19.7973C0.396688 19.2349 0.587125 18.7406 0.968 18.3143L8.21837 11.0633L4.83863 7.711L3.53787 9.01175C3.11117 9.43846 2.61663 9.65181 2.05425 9.65181C1.49188 9.65181 1.00627 9.43846 0.597438 9.01175C0.199146 8.63088 0 8.15215 0 7.57556C0 6.99944 0.199146 6.51223 0.597438 6.11394L6.09744 0.640062C6.50627 0.213354 6.99187 0 7.55425 0C8.11662 0 8.61117 0.213354 9.03788 0.640062C9.41875 1.02094 9.60919 1.49944 9.60919 2.07556C9.60919 2.65215 9.41875 3.13088 9.03788 3.51175L7.71031 4.83931L11.0901 8.19225L18.3404 0.941876C18.7667 0.515168 19.261 0.301814 19.8234 0.301814C20.3858 0.301814 20.8714 0.515168 21.2802 0.941876C21.7069 1.35071 21.9203 1.83631 21.9203 2.39869C21.9203 2.96106 21.7069 3.45538 21.2802 3.88163L19.5828 5.53713L39.0706 25.025C40.0368 25.9912 40.5199 27.167 40.5199 28.5526C40.5199 29.9381 40.0368 31.105 39.0706 32.0533L37.0666 34.1L49.1081 46.0996H43.2279L34.1261 36.9978L32.1221 39.0445C31.1733 39.9928 30.0062 40.4669 28.6206 40.4669C27.2351 40.4669 26.0595 39.9928 25.0938 39.0445L5.60587 19.5566L3.90775 21.2541C3.4815 21.6528 2.99154 21.8522 2.43787 21.8522C1.88421 21.8522 1.39425 21.6528 0.968 21.2541ZM8.47688 16.6849L27.9648 36.1728C28.1412 36.3319 28.344 36.4114 28.5732 36.4114C28.8024 36.4114 29.0052 36.3319 29.1816 36.1728L36.1302 29.1555C36.3066 28.9969 36.3949 28.7985 36.3949 28.5601C36.3949 28.3223 36.3066 28.124 36.1302 27.9654L32.1111 23.8776L28.0761 27.9125C27.6494 28.3108 27.1595 28.517 26.6063 28.5313C26.0526 28.5455 25.5853 28.3621 25.2044 27.9813C24.7782 27.5724 24.5651 27.0868 24.5651 26.5244C24.5651 25.9621 24.7782 25.4675 25.2044 25.0408L29.2401 21.0059L24.2949 16.0875L20.2599 20.1224C19.8511 20.5033 19.3655 20.6938 18.8031 20.6938C18.2407 20.6938 17.7462 20.5033 17.3195 20.1224C16.9386 19.6962 16.7482 19.2019 16.7482 18.6395C16.7482 18.0771 16.9386 17.5913 17.3195 17.182L21.3544 13.1471L16.6849 8.47756L8.47688 16.6849ZM8.47688 16.6849L8.64875 16.5131C8.76333 16.3985 8.90885 16.2532 9.08531 16.0772L16.6849 8.47756L8.47688 16.6849Z' /%3E%3C/svg%3E%0A");
 }
-.slogan .slogan_cont .list ul li h3.list_04::after {
-    background-size: 42px;
+.clinic .list ul li h3.list_04::after {
+    background-size: 1.75em;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 42 53' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.1875 34.9566H24.0625V28.0816H30.9375V21.2066H24.0625V14.3316H17.1875V21.2066H10.3125V28.0816H17.1875V34.9566ZM20.625 52.0912C14.6772 50.4692 9.75288 46.9682 5.852 41.5883C1.95067 36.2083 0 30.1936 0 23.5441V7.72131L20.625 0L41.25 7.72131V23.5441C41.25 30.1936 39.2993 36.2083 35.398 41.5883C31.4971 46.9682 26.5728 50.4692 20.625 52.0912ZM20.625 47.7441C25.3917 46.2316 29.3333 43.2066 32.45 38.6691C35.5667 34.1316 37.125 29.09 37.125 23.5441V10.5504L20.625 4.389L4.125 10.5504V23.5441C4.125 29.09 5.68333 34.1316 8.8 38.6691C11.9167 43.2066 15.8583 46.2316 20.625 47.7441Z' /%3E%3C/svg%3E%0A");
 }
+@media screen and (max-width:1024px){
+        .clinic {
+            margin:96px 0 0 0;
+            padding: 86px 0 62px 0;
+        }
+        .clinic .tit h2 {
+            font-size: 32px;
+            margin: 0 0 11px 0;
+        }
+        .clinic .list {
+            margin: 36px 0 0 0;
+        }
+        .clinic .list ul {
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 100%;
+        }
+        .clinic .list ul li {
+            width: calc(50% - 12px); /* 24px gap 고려 */
+            height: 254px;
+            padding-bottom: 52px;
+        }
+        .clinic .list ul li::before {
+            padding: 0;
+            width: 254px;
+            height: 254px;
+        }
+        .clinic .list ul li h3 {
+            font-size: 22px;
+            margin: 0 0 9px 0;
+        }
+        .clinic .list ul li h3::after {
+            bottom: 52px;
+            width: 40px;
+            height: 40px;
+            background-size: 40px;
+        }
+        .clinic .list ul li h3.list_02::after {
+            background-size: 40px;
+        }
+        .clinic .list ul li h3.list_03::after {
+            background-size: 40px;
+        }
+        .clinic .list ul li h3.list_04::after {
+            background-size: 33px;
+        }
+}/* @media */
+@media screen and (max-width:768px){
+        .clinic .tit h2 {
+            font-size: 24px;
+            margin: 0 0 4px 0;
+        }
+        .clinic .list ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 16px 0;
+        }
+        .clinic .list ul li {
+            width: 220px;
+            height: 220px;
+            padding-bottom: 43px;
+        }
+        .clinic .list ul li::before {
+            width: 220px;
+            height: 220px;
+        }
+        .clinic .list ul li h3 {
+            font-size: 20px;
+            margin: 0 0 6px 0;
+        }
+        .clinic .list ul li h3::after {
+            bottom: 37px;
+            width: 40px;
+            height: 40px;
+            background-size: 31px;
+        }
+        .clinic .list ul li h3.list_02::after {
+            background-size: 29px;
+        }
+        .clinic .list ul li h3.list_03::after {
+            background-size: 30px;
+        }
+        .clinic .list ul li h3.list_04::after {
+            background-size: 25px;
+        }
+}/* @media */
 
 .introduce {
     background-color: var(--color-title);
@@ -356,6 +511,11 @@
             padding: 107px 0 78px 0;
             justify-content: center;
         }
+        .introduce .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         .introduce .tit {
             margin-bottom: 43px;
         }
@@ -442,7 +602,7 @@
             font-size: 20px;
         }
         .introduce .inner .cont_right .sub_tit .sub_txt h3 {
-            font-size: 26px;
+            font-size: 24px;
         }
         .introduce .inner .cont_left .cont_txt .cont_item h4 {
             font-size: 20px;
@@ -1108,8 +1268,8 @@ aside.quick {
     z-index: 99;
     font-family: "pretendard";
     font-size: 14px;
-    font-weight: 700;
     color: var(--color-w);
+    white-space: nowrap;
 }
 aside.quick .menu_btn .quick_open,
 aside.quick .menu_btn .quick_close,
@@ -1192,6 +1352,6 @@ aside.quick .top_btn:hover .top {
 }
 @media screen and (max-width:1024px){
     aside.quick {
-        display: none !important;
+        right: 20px;
     }
 }/* @media */

@@ -21,27 +21,13 @@ $(document).ready(function(){
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
         if(device_status == 'pc'){
             $('header').addClass('menu_pc')
-            
         }
     })
-    // $('header .gnb .gnb_bg').on('mouseenter', function(){
-    //     $('header').removeClass('menu_pc')
-        
-    // })
     $('site_wrap').on('focusin', function(){
         $('header').removeClass('menu_pc')
     })
 
-    //header .site_close  /header에 .site_open 클래스 추가
-    //header .gnb .gnb_wrap .gnb_open
-    $('header .gnb .gnb_wrap .gnb_open').on('click', function(){
-        $('header').addClass('site_open').removeClass('menu_pc')
-    })
-    $('header .site_close').on('click', function(){
-        $('header').removeClass('site_open')
-    })
-
-    //header .gnb .gnb_wrap ul.depth1 > li 에 오버하면 header에 menu_pc 클래스 추가
+    // header .gnb .gnb_wrap ul.depth1 > li 에 오버하면 header에 menu_pc 
     $('header').on('mouseenter', function(){
         if(!$(this).hasClass('site_open')){
             $(this).addClass('menu_pc')
@@ -53,24 +39,47 @@ $(document).ready(function(){
         $('header').removeClass('menu_pc')
     })
 
+    /* header.site_open .site_menu ul.site_depth1 > li 일때만 */
+    let site_open
+    let site_active
+    $('header .site_menu ul.site_depth1 > li > a').on('click', function(e){
+		if(device_status == 'mobile'){
+            e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
+            site_open = $(this).parent().hasClass('mo_open')
+            site_active = $(this).parent().find('.active').length
+            //console.log(site_open)
+            if(site_open == true){ //열려있다면
+                $(this).parent().removeClass('mo_open')
+                $(this).next().slideUp()
+            }else{
+                $('header .site_menu ul.site_depth1 > li').removeClass('mo_open')
+                $('header .site_menu ul.site_depth1 > li > ul.site_depth2').slideUp()
+                $(this).parent().addClass('mo_open')
+                $(this).next().slideDown()
+            }
+        }
+	});
 
-    
     //스크롤을 내리면 header에 fixed
     let scrolling = $(window).scrollTop() //현재 스크롤된 값
     let prev_scroll //이전에 스크롤된 값
     let diff_scroll //차이값
 
     function scroll_chk(){
-        prev_scroll = scrolling
-        scrolling = $(window).scrollTop()
+        prev_scroll = scrolling 
+        scrolling = $(window).scrollTop() 
         diff_scroll = prev_scroll - scrolling
         // console.log(diff_scroll)
+        if ((prev_scroll == 0) && scrolling > 0) {
+            $('header').removeClass('fixed')
+            return;
+        }
         if((diff_scroll < 0) && scrolling > 0){ //위로 스크롤됨
             $('header').addClass('up')
             // console.log('if ?')
         }else{ //아래로 스크롤됨
             $('header').removeClass('up')
-            $('aside.quick')
+            //$('aside.quick')
             // console.log('else ?')
         }
         if(scrolling > 0){ //스크롤 내림
@@ -80,8 +89,20 @@ $(document).ready(function(){
             $('header').removeClass('fixed')
             $('aside.quick').fadeOut(200)
         }
-        
     }
+
+    // 모바일 메뉴 열기
+    $('header .gnb .gnb_wrap .gnb_open').on('click', function(){
+        $('header').addClass('site_open').removeClass('menu_pc').removeClass('fixed')
+        $('body').css('overflow', 'hidden') // 스크롤 막기
+    })
+    // 모바일 메뉴 닫기
+    $('header .site_close').on('click', function(){
+        $('header').removeClass('site_open')
+        $('body').css('overflow', '') // 스크롤 풀기
+    })
+
+
     scroll_chk() //문서가 로딩되고 단한번 실행
     $(window).scroll(function(){
         scroll_chk() //스크롤 할때마다 실행
