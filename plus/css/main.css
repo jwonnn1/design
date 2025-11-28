@@ -1009,8 +1009,8 @@
     position: absolute;
     left: 17px;
     top: 7px;
-    width: 13px;
-    height: 19px;
+    width: 0.7647em;
+    height: 1.1176em;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1149,14 +1149,6 @@
             background-color: var(--color-w);
             border: 1px solid #555555;
             color: var(--color-title);
-        }
-        .location .ctn_area .area_info .way .map a::before {
-            content: "";
-            position: absolute;
-            left: 17px;
-            top: 7px;
-            width: 13px;
-            height: 19px;
         }
         .location .ctn_area .area_info .time {
             margin: 0 16px;
