@@ -1358,5 +1358,6 @@ aside.quick .top_btn:hover .top {
 @media screen and (max-width:1024px){
     aside.quick {
         right: 20px;
+        bottom: 30px;
     }
 }/* @media */
