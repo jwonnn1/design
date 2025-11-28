@@ -379,7 +379,7 @@
     height: 100%;
 }
 .introduce .inner .cont_right .photo {
-    width: 360px;
+    width: 338px;
     height: 560px;
     overflow: hidden;
 }
@@ -441,7 +441,7 @@
     color: var(--color-w);
 }
 .introduce .inner .cont_left {
-    margin: 0 0 0 117px;
+    margin: 0 0 0 97px;
 }
 .introduce .inner .cont_left .cont_txt {
     display: flex;
