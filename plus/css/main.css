@@ -1216,10 +1216,6 @@
     animation: ptn_roll 18s linear infinite;
     will-change: transform;
 }
-.partner .list .partner_wrap .ptn_roll {
-    /* animation: ptn_roll 18s linear infinite;
-    will-change: transform; */
-}
 .partner .list .partner_wrap:hover .ptn_roll {
     animation-play-state: paused;
 }
