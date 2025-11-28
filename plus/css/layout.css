@@ -234,7 +234,7 @@ header.site_open .site_close {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        top: 350px;
+        top: 40%;
         display: flex;
     }
     header.site_open .site_menu ul.site_depth1 > li {
