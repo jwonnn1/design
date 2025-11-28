@@ -65,6 +65,9 @@
     background: #fff;
     margin-left: 8px;
     animation: blink 0.8s step-end infinite;
+
+    opacity: var(--after-opacity, 1);
+    transition: opacity 0.3s;
 }
 .visual .visual_wrap .txt_box .txt_wrap .cursor {
     display: none;

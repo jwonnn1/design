@@ -14,7 +14,7 @@ $(document).ready(function(){
         text: "Confidence Begins with Your Skin",
         ease: "none",
         onComplete() {
-            gsap.to("h2.type_target::after", { opacity: 0, duration: 0.5 }); // 직접 선택 불가
+            gsap.to("h2.type_target", { "--after-opacity": 0, duration: 0.5 }); // 직접 선택 불가
             // 대신 이렇게 CSS 클래스 활용
             document.querySelector('h2.type_target').classList.add('cursor-fade');
         }
