@@ -1099,6 +1099,8 @@
         }
         .location .ctn_area .area_info .way {
             position: relative;
+            margin: 0 16px;
+            width: 100%;
         }
         .location .ctn_area .area_info .way::after {
             content: "";
@@ -1118,7 +1120,9 @@
         }
         .location .ctn_area .area_info .way .map {
             display: flex;
-            gap: 0 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
         .location .ctn_area .area_info .way .map a {
             display: inline-block;
@@ -1154,6 +1158,11 @@
             width: 13px;
             height: 19px;
         }
+        .location .ctn_area .area_info .time {
+            margin: 0 16px;
+            width: 100%;
+        }
+        
         .location .ctn_area .area_info .time::before {
             display: none;
         }
@@ -1169,17 +1178,19 @@
         }
         .location .ctn_area .area_info .time ol li {
             display: flex;
-            gap: 0 35px;
+            justify-content: center;
+            gap: 0 30px;
             letter-spacing: 1.5px;
         }
         .location .ctn_area .area_info .time ol li p {
-            width: 63px;
+            width: 60px;
+            text-align: center;
         }
         .location .ctn_area .area_info .time ol li:nth-child(2) p {
-            letter-spacing: 4px;
+            letter-spacing: 3px;
         }
         .location .ctn_area .area_info .time ol li:last-child p {
-            letter-spacing: 0;
+            letter-spacing: 1px;
         }
         .location .ctn_area .area_info .time strong {
             font-size: 14px;
