@@ -13,16 +13,35 @@ $(document).ready(function(){
         }
     }
 
-    device_chk() //문서가 로딩되었을때 한번실행
-    $(window).resize(function(){
-        device_chk() //브라우저가 리사이즈 될때마다 한번씩 실행
-    })
+    device_chk() // 문서 로딩 후 1회 실행
+    $(window).resize(function(){ device_chk() }) // 창 크기 바뀔 때마다 갱신
 
-    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
-        if(device_status == 'pc'){
-            $('header').addClass('menu_pc')
-        }
-    })
+    let gnb_li = $('header .gnb .gnb_wrap ul.depth1 > li')
+
+    function depth_menu_chk(){
+        gnb_li.find('ul.depth2').hide()
+    }
+
+    depth_menu_chk() // 새로고침 시 depth2 숨김
+
+    if(device_status == 'pc'){ //  pc일 때만 아래 코드 실행
+        gnb_li.on('mouseenter focusin', function(){
+            $('header').addClass('fixed')
+            $(this).addClass('over')
+            $(this).find('ul.depth2').stop().slideDown(300)
+        })
+        gnb_li.on('mouseleave', function(){
+            $(this).removeClass('over')
+            $(this).find('ul.depth2').stop().slideUp(300)
+            $('header').removeClass('fixed')
+        })
+        gnb_li.find('ul.depth2 > li:last-child').on('focusout', function(){
+            gnb_li.removeClass('over')
+            gnb_li.find('ul.depth2').stop().slideUp(300)
+            $('header').removeClass('fixed')
+        })
+    }
+
     $('site_wrap').on('focusin', function(){
         $('header').removeClass('menu_pc')
     })

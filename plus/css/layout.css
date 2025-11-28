@@ -158,7 +158,8 @@ header.site_open .site_close {
         padding: 0 25px;
         white-space: nowrap;
     }
-    header .gnb .gnb_wrap ul.depth1 > li:hover > a {
+    
+    header .gnb .gnb_wrap ul.depth1 > li.over > a {
         color: var(--color-main);
     }
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
@@ -170,7 +171,7 @@ header.site_open .site_close {
         text-align: center;
         min-width: 100%;
     }
-    header .gnb_wrap ul.depth1 > li:hover > ul.depth2 {
+    header .gnb_wrap ul.depth1 > li.over > ul.depth2 {
         display: block;
         margin-top: -10px;
         padding: 26px 20px;
@@ -184,6 +185,7 @@ header.site_open .site_close {
         padding: 7px 0;
         white-space: nowrap;
     }
+    
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:hover > a {
         color: var(--color-main);
     }
@@ -200,6 +202,7 @@ header.site_open .site_close {
         background-color: var(--color-main);
         transition: 0.5s;
     }
+    
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:hover > a > span::before {
         width: 100%;
     }
@@ -248,10 +251,12 @@ header.site_open .site_close {
         line-height: 30px;
         position: relative;
     }
-    header.site_open .site_menu ul.site_depth1 > li > a:hover {
+    
+    header.site_open .site_menu ul.site_depth1 > li > a.over {
         cursor: pointer;
     }
-    header.site_open .site_menu ul.site_depth1 > li:hover > a::after {
+    
+    header.site_open .site_menu ul.site_depth1 > li.over > a::after {
         content: "";
         position: absolute;
         left: -5px;
@@ -277,7 +282,8 @@ header.site_open .site_close {
 
         position: relative;
     }
-    header.site_open .site_menu ul.site_depth1 > li > ul.site_depth2 > li:hover > a {
+    
+    header.site_open .site_menu ul.site_depth1 > li > ul.site_depth2 > li.over > a {
         opacity: 1;
     }
     header.site_open .site_menu ul.site_depth1 > li > ul.site_depth2 > li > a::after {
@@ -290,7 +296,8 @@ header.site_open .site_close {
         background-color: var(--color-w80);
         transition: 0.5s;
     }
-    header.site_open .site_menu ul.site_depth1 > li > ul.site_depth2 > li:hover > a::after {
+    
+    header.site_open .site_menu ul.site_depth1 > li > ul.site_depth2 > li.over > a::after {
         width: 100%;
     }
 }/* @media */
