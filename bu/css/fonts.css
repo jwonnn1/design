@@ -1,17 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+
 @font-face {
-	font-family: 'Pretendard';
-	font-weight: 400;
-	font-display: swap;
-	src: local('Pretendard Regular'), 
-    url(../fonts/Pretendard-Regular.woff2) format('woff2'), 
-    url(../fonts/Pretendard-Regular.woff) format('woff');
+    font-family: 'Suit';
+    src: url('../fonts/SUIT-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
 }
 @font-face {
-	font-family: 'Pretendard';
-	font-weight: 700;
-	font-display: swap;
-	src: local('Pretendard Bold'), 
-    url(../fonts/Pretendard-Bold.woff2) format('woff2'), 
-    url(../fonts/Pretendard-Bold.woff) format('woff');
+    font-family: 'Suit';
+    src: url('../fonts/SUIT-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suit';
+    src: url('../fonts/SUIT-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
 }
