@@ -1,0 +1,156 @@
+$(document).ready(function(){
+
+    let mobile_size = 1024 //모바일 메뉴 시작 사이즈
+    let window_w //브라우저 넓이
+    let device_status //현재 pc인지 mobile인지 구분하는 값
+
+    function device_chk(){
+        window_w = $(window).width()
+        if(window_w > mobile_size){
+            device_status = 'pc'
+        }else{
+            device_status = 'mobile'
+        }
+    }
+
+    device_chk() // 문서 로딩 후 1회 실행
+    $(window).resize(function(){ device_chk() }) // 창 크기 바뀔 때마다 갱신
+
+    let gnb_li = $('header .gnb .gnb_wrap ul.depth1 > li')
+
+    function depth_menu_chk(){
+        gnb_li.find('ul.depth2').hide()
+    }
+
+    depth_menu_chk() // 새로고침 시 depth2 숨김
+
+    if(device_status == 'pc'){ //  pc일 때만 아래 코드 실행
+        gnb_li.on('mouseenter focusin', function(){
+            $('header').addClass('fixed')
+            $(this).addClass('over')
+            $(this).find('ul.depth2').stop().slideDown(300)
+        })
+        gnb_li.on('mouseleave', function(){
+            $(this).removeClass('over')
+            $(this).find('ul.depth2').stop().slideUp(300)
+            $('header').removeClass('fixed')
+        })
+        gnb_li.find('ul.depth2 > li:last-child').on('focusout', function(){
+            gnb_li.removeClass('over')
+            gnb_li.find('ul.depth2').stop().slideUp(300)
+            $('header').removeClass('fixed')
+        })
+    }
+
+    $('site_wrap').on('focusin', function(){
+        $('header').removeClass('menu_pc')
+    })
+
+    // header .gnb .gnb_wrap ul.depth1 > li 에 오버하면 header에 menu_pc 
+    $('header').on('mouseenter', function(){
+        if(!$(this).hasClass('site_open')){
+            $(this).addClass('menu_pc')
+        }else{
+            $(this).removeClass('menu_pc')
+        }
+    })
+    $('header').on('mouseleave', function(){
+        $('header').removeClass('menu_pc')
+    })
+
+    /* header.site_open .site_menu ul.site_depth1 > li 일때만 */
+    let site_open
+    let site_active
+    $('header .site_menu ul.site_depth1 > li > a').on('click', function(e){
+		if(device_status == 'mobile'){
+            e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
+            site_open = $(this).parent().hasClass('mo_open')
+            site_active = $(this).parent().find('.active').length
+            //console.log(site_open)
+            if(site_open == true){ //열려있다면
+                $(this).parent().removeClass('mo_open')
+                $(this).next().slideUp()
+            }else{
+                $('header .site_menu ul.site_depth1 > li').removeClass('mo_open')
+                $('header .site_menu ul.site_depth1 > li > ul.site_depth2').slideUp()
+                $(this).parent().addClass('mo_open')
+                $(this).next().slideDown()
+            }
+        }
+	});
+
+    //스크롤을 내리면 header에 fixed
+    let scrolling = $(window).scrollTop() //현재 스크롤된 값
+    let prev_scroll //이전에 스크롤된 값
+    let diff_scroll //차이값
+
+    function scroll_chk(){
+        prev_scroll = scrolling 
+        scrolling = $(window).scrollTop() 
+        diff_scroll = prev_scroll - scrolling
+        // console.log(diff_scroll)
+        if ((prev_scroll == 0) && scrolling > 0) {
+            $('header').removeClass('fixed')
+            return;
+        }
+        if((diff_scroll < 0) && scrolling > 0){ //위로 스크롤됨
+            $('header').addClass('up')
+            // console.log('if ?')
+        }else{ //아래로 스크롤됨
+            $('header').removeClass('up')
+            //$('aside.quick')
+            // console.log('else ?')
+        }
+        if(scrolling > 0){ //스크롤 내림
+            $('header').addClass('fixed')
+            $('aside.quick').fadeIn(200)
+        }else{ //0이거나 0보다 작은경우 (fixed제거)
+            $('header').removeClass('fixed')
+            $('aside.quick').fadeOut(200)
+        }
+    }
+
+    // 모바일 메뉴 열기
+    $('header .gnb .gnb_wrap .gnb_open').on('click', function(){
+        $('header').addClass('site_open').removeClass('menu_pc').removeClass('fixed')
+        $('body').css('overflow', 'hidden') // 스크롤 막기
+    })
+    // 모바일 메뉴 닫기
+    $('header .site_close').on('click', function(){
+        $('header').removeClass('site_open')
+        $('body').css('overflow', '') // 스크롤 풀기
+    })
+
+
+    scroll_chk() //문서가 로딩되고 단한번 실행
+    $(window).scroll(function(){
+        scroll_chk() //스크롤 할때마다 실행
+    })
+
+    /*******************
+	 * 퀵메뉴 열고 닫기
+	 * aside.quick .quick_open 를 클릭하면 aside.quick .quick open
+	 * >>>> aside.quick quick_wrap slideDown() 으로 닫기
+	 * aside.quick .quick_close 를 클릭하면 aside.quick 에 open 삭제
+	 * >>>> aside.quick quick_wrap slideUp() 으로 닫기
+	 *******************/
+
+	$('aside.quick .quick_open').on('click', function(){
+		$('aside.quick').addClass('open')
+		$('aside.quick .quick_wrap').slideDown()
+	})
+	$('aside.quick .quick_close').on('click', function(){
+		$('aside.quick').removeClass('open')
+		$('aside.quick .quick_wrap').slideUp()
+	})
+
+    /* top버튼을 클릭하면 상단으로 이동 */ 
+    $('aside.quick .top_btn .top').on('click', function(){
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500) //브라우저를 최상단으로 0.5초만에 올림
+    })
+
+    
+
+})//맨끝
