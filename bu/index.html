@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/slick.js"></script>
+    <link rel="stylesheet" href="css/slick.css">
+    <script src="js/aos.js"></script>
+    <link rel="stylesheet" href="css/aos.css">
 
+    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>백석대학교</title>
@@ -57,9 +65,652 @@
                 </div>
                 <div class="scroll_down"><span>scroll down</span></div>
             </section> <!-- visual -->
-            <section class="bookmark"></section> <!-- bookmark -->
-            <section class="view"></section> <!-- view -->
-            <section class="depart"></section> <!-- depart -->
+            <section class="bookmark">
+                <div class="wrapper">
+                    <h2><strong>BU</strong> 즐겨찾는 서비스</h2>
+                    <div class="list">
+                        <ul>
+                            <li class="icon01" data-aos="fade-up"><a href="#n"><span>포털서비스</span></a></li>
+                            <li class="icon02" data-aos="fade-up" data-aos-delay="100"><a href="#n"><span>종합정보시스템</span></a></li>
+                            <li class="icon03" data-aos="fade-up" data-aos-delay="150"><a href="#n"><span>학생역량관리</span></a></li>
+                            <li class="icon04" data-aos="fade-up" data-aos-delay="200"><a href="#n"><span>사이버캠퍼스</span></a></li>
+                            <li class="icon05" data-aos="fade-up" data-aos-delay="250"><a href="#n"><span>도서관</span></a></li>
+                            <li class="icon06" data-aos="fade-up" data-aos-delay="300"><a href="#n"><span>인터넷증명발급</span></a></li>
+                            <li class="icon07" data-aos="fade-up" data-aos-delay="350"><a href="#n"><span>전자결재</span></a></li>
+                            <li class="icon08" data-aos="fade-up" data-aos-delay="400"><a href="#n"><span>온라인심리상담</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section> <!-- bookmark -->
+            <section class="view">
+                <div class="wrapper">
+                    <h2>오늘의 <strong>BU,</strong> 모아보기</h2>
+                    <div class="view_box">
+                        <div class="view_left">
+                            <div class="notice" data-aos="fade-right" data-aos-delay="300">
+                                <h3>새소식</h3>
+                                <div class="viewtab_list">
+                                    <ul>
+                                        <li class="item1 active" data-tab="item1"><button>공지<span class="blind">선택됨</span></button></li>
+                                        <li class="item2 " data-tab="item2"><button>행사<span class="blind"></span></button></li>
+                                        <li class="item3 " data-tab="item3"><button>학사<span class="blind"></span></button></li>
+                                        <li class="item4 " data-tab="item4"><button>입학<span class="blind"></span></button></li>
+                                        <li class="item5 " data-tab="item5"><button>장학<span class="blind"></span></button></li>
+                                        <li class="item6 " data-tab="item6"><button>취업<span class="blind"></span></button></li>
+                                        <li class="item7 " data-tab="item7"><button>채용<span class="blind"></span></button></li>
+                                    </ul>
+                                </div>
+                                <div class="viewtab_cont">
+                                    <div class="tab_item item1 active" title="선택됨">
+                                        <h4 class="blind">공지</h4>
+                                        <div class="list">
+                                            <ul>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>2025학년도 동계 계절학기 1차 폐강 강좌 공지</p>
+                                                        <span>25.12.02</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>(한국국제협력단) 2025년 개편 KOICA 프로젝트 봉사단(6기) 모집(학점인정제)</p>
+                                                        <span>25.12.01</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>우리대학과 학부를 위한 기도입니다. 함께 기도해 주세요.</p>
+                                                        <span>25.11.28</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>[학생역량관리센터] 2025-2학기 비교과프로그램 개인주도활동 신청 안내</p>
+                                                        <span>25.11.27</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="more"><a href="#n"><span class="blind">더보기</span></a></div>
+                                    </div><!--tab_item item1-->
+                                    <div class="tab_item item2 " title="">
+                                        <h4 class="blind">행사</h4>
+                                        <div class="list">
+                                            <ul>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>[도서관] 기말고사 응원 도시락 이벤트</p>
+                                                        <span>25.12.02</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>[문화예술학부] 연기예술전공 2025-2학기 정기공연</p>
+                                                        <span>25.12.01</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>[학생생활상담센터] 찾아가는 열린상담실: 고민-응원 릴레이</p>
+                                                        <span>25.11.20</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>[문화예술학부] 실용음악전공 2025-2학기 정기공연 "단 하나의 추억"</p>
+                                                        <span>25.11.18</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="more"><a href="#n"><span class="blind">더보기</span></a></div>
+                                    </div><!--tab_item item2-->
+                                    <div class="tab_item item3 " title="">
+                                        <h4 class="blind">학사</h4>
+                                        <div class="list">
+                                            <ul>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>2025-2학기 기말 강의평가기간 연장 안내</p>
+                                                        <span>25.11.28</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>2025-2학기 기말고사 및 성적평가 일정 안내</p>
+                                                        <span>25.11.25</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>2026학년도 수강 교과목 사전수요조사 실시 안내</p>
+                                                        <span>25.11.18</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>2025-2학기 기말 강의평가 참여 안내</p>
+                                                        <span>25.11.17</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="more"><a href="#n"><span class="blind">더보기</span></a></div>
+                                    </div><!--tab_item item3-->
+                                    <div class="tab_item item4 " title="">
+                                        <h4 class="blind">입학</h4>
+                                        <div class="list">
+                                            <ul>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>2027학년도 대학입학전형시행계획 안내</p>
+                                                        <span>25.04.30</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>2025학년도 대학별고사 선행학습 영향평가 자체평가 결과보고서</p>
+                                                        <span>25.03.24</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>2026학년도 대학입학전형시행계획 안내</p>
+                                                        <span>24.04.30</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>2024학년도 대학별고사 선행학습 영향평가 자체평가 결과보고</p>
+                                                        <span>24.03.26</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="more"><a href="#n"><span class="blind">더보기</span></a></div>
+                                    </div><!--tab_item item4-->
+                                    <div class="tab_item item5 " title="">
+                                        <h4 class="blind">장학</h4>
+                                        <div class="list">
+                                            <ul>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>2026학년도 1학기 주거안정장학금 신청 안내</p>
+                                                        <span>25.11.18</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>2026년 1학기 국가장학금 1차 신청 안내</p>
+                                                        <span>25.11.18</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>[국가근로] 2026학년도 1학기 국가근로장학금 학생신청기간 안내</p>
+                                                        <span>25.11.17</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>[교외장학]2026년도 한국지도자육성장학재단 신규장학생 선발 공고</p>
+                                                        <span>25.10.28</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="more"><a href="#n"><span class="blind">더보기</span></a></div>
+                                    </div><!--tab_item item5-->
+                                    <div class="tab_item item6" title="">
+                                        <h4 class="blind">취업</h4>
+                                        <div class="list">
+                                            <ul>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>[메가존클라우드] 2026 메가존클라우드 신입 공개채용(~12/19)</p>
+                                                        <span>25.12.19</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>[(주)제이에이티] 신입/경력 채용공고</p>
+                                                        <span>25.12.31</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>[하이트진로음료] 경영관리 신입 채용</p>
+                                                        <span>25.12.03</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>[평택아이엠 미술학원] 디자인 강사 모집</p>
+                                                        <span>상시채용</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="more"><a href="#n"><span class="blind">더보기</span></a></div>
+                                    </div><!--tab_item item6-->
+                                    <div class="tab_item item7" title="">
+                                        <h4 class="blind">채용</h4>
+                                        <div class="list">
+                                            <ul>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>[채용] 장애학생지원센터 계약직 직원 모집 공고</p>
+                                                        <span>25.12.03</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>[채용] 사범학부 TA(Teaching Assistant) 모집 재공고</p>
+                                                        <span>25.12.02</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>[학생생활상담센터] 2026-1학기 백석대 학생생활상담센터 유급 상담사 모집 공고</p>
+                                                        <span>25.12.02</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#n">
+                                                        <p>[채용] 외식산업학부 조교(TA) 모집 공고</p>
+                                                        <span>25.12.01</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="more"><a href="#n"><span class="blind">더보기</span></a></div>
+                                    </div><!--tab_item item7-->
+                                </div>
+                            </div>
+                            <div class="news" data-aos="fade-right" data-aos-delay="400">
+                                <h3>백녹담</h3>
+                                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/new01.jpg" alt=""></div>
+                                                <h4>[예비 백석인 / 백석인들 위한 Tip] 백석대학교 설립 정신 소개</h4>
+                                                <p>백석대학교를 녹녹(knock-knock) 하는 이야기를 담는 기자단, 백녹담입니다. 요즘 날씨가 갑작스럽게 뚝 떨어지며 많이 추워지기 시작하였는데, 여러분 모두 따뜻하게 잘 챙겨 입고 건강도 꼭 잘 지키고 계신지 궁금합니다! 겨울철에는 따뜻하게 체온을 보호할 수 있는 외출복과 면역력을 잘 관리하여 건강하고 안전한 겨울을 보내시길 바랍니다.</p>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/new02.jpg" alt=""></div>
+                                                <h4>[백석인들을 위한 TIP] 백녹담이 알려주는 11월 공모전/대외활동</h4>
+                                                <p>12월이 다가오며, 어느새 한 해의 끝을 향해 가는 11월도 끝이 보이고 있습니다. 바쁜 일상 속에서도 새로운 경험을 찾는 대학생들에게는 뜻밖의 기회들이 이달에도 다양하게 열리고 있습니다. 이번 기사에서는 백녹담이 전공과 관심 분야에 따라 활용할 수 있는 공모전과 대외활동 정보를 정리해 소개합니다!</p>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/new03.jpg" alt=""></div>
+                                                <h4>[백석인들을 위한 Tip] 대학생의 힐링을 위한 단풍 명소 추천</h4>
+                                                <p>안녕하세요! 백석대학교를 노크(knock)하는 이야기를 담는 기자단, 백녹담입니다. 화창했던 여름이 물러나고 선선한 가을바람과 함께 울긋불긋 단풍이 물드는 시기, 잠시 책에서 눈을 돌려 하늘을 올려다보면 가을이 선사하는 아름다움에 저절로 미소 짓게 됩니다. 취업 준비, 학점 관리, 팀플 과제 등 끊임없이 이어지는 바쁜 대학생활 속에서 우리 대학생들에게는 잠시 숨을 고르고 재충전할 수 있는 ‘쉼표’가 필요합니다.</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="more"><a href="#n"><span class="blind">더보기</span></a></div>
+                            </div>
+                        </div>
+                        <div class="view_right">
+                            <div class="calendar" data-aos="fade-up" data-aos-delay="300">
+                                <h3>학사일정</h3>
+                                <div class="caletab_list">
+                                    <ul>
+                                        <li class="item1 active" data-tab="item1"><button>12월<span class="blind">선택됨</span></button></li>
+                                        <li class="item2" data-tab="item2"><button>01월<span class="blind"></span></button></li>
+                                        <li class="item3" data-tab="item3"><button>02월<span class="blind"></span></button></li>
+                                    </ul>
+                                </div>
+                                <div class="caletab_cont">
+                                    <div class="tab_item item1 active" title="선택됨">
+                                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                                <li class="swiper-slide">
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>DEC <br><strong>03</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>동계 계절학기 등록 기간</p>
+                                                                <span>12.03 (수) ~ 12.05 (금)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>DEC <br><strong>08</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>지정보강주</p>
+                                                                <span>12.08 (월) ~ 12.12 (금)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>DEC <br><strong>15</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>2학기 기말고사 기간</p>
+                                                                <span>12.15 (월) ~ 12.19 (금)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>DEC <br><strong>15</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>2학기 성적입력 기간</p>
+                                                                <span>12.15 (월) ~ 12.29 (월)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>DEC <br><strong>19</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>종강일</p>
+                                                                <span>12.19 (금)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>DEC <br><strong>22</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>동계방학 시작</p>
+                                                                <span>12.22 (월)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>DEC <br><strong>22</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>동계 계절학기</p>
+                                                                <span>12.22 (월) ~ 01.13 (화)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>DEC <br><strong>30</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>2학기 성적열람 기간</p>
+                                                                <span>12.30 (화) ~ 12.31 (수)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </li> 
+                                            </ul>
+                                            <div class="calen_btn">
+                                                <button class="btn_prev"><span class="blind">이전버튼</span></button>
+                                                <button class="btn_next"><span class="blind">다음버튼</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab_item item2" title="선택됨">
+                                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                                <li class="swiper-slide">
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>JAN <br><strong>03</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>동계 계절학기 등록 기간</p>
+                                                                <span>12.03 (수) ~ 12.05 (금)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>JAN <br><strong>01</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>신정</p>
+                                                                <span>01.01 (수)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>JAN <br><strong>6</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>2학기 성적마감</p>
+                                                                <span>01.06 (월)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>JAN <br><strong>6</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>신입생 예비대학(1차)</p>
+                                                                <span>01.06 (월) ~ 01.17 (금)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>JAN <br><strong>13</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>정시 면접·실기고사</p>
+                                                                <span>01.13 (월) ~ 01.14 (화)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>JAN <br><strong>13</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>2025-1학기 복학 신청 기간</p>
+                                                                <span>01.13 (월) ~ 01.31 (금)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>JAN <br><strong>16</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>정시 면접·실기고사</p>
+                                                                <span>01.16 (목) ~ 01.17 (금)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>JAN <br><strong>17</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>동계 계절학기 성적입력 기간</p>
+                                                                <span>01.17 (금) ~ 01.21 (화)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>JAN <br><strong>22</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>동계 계절학기 성적열람 기간</p>
+                                                                <span>01.22 (수) ~ 01.23 (목)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>JAN <br><strong>24</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>동계 계절학기 성적마감</p>
+                                                                <span>01.24 (금)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </li> 
+                                            </ul>
+                                            <div class="calen_btn">
+                                                <button class="btn_prev"><span class="blind">이전버튼</span></button>
+                                                <button class="btn_next"><span class="blind">다음버튼</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab_item item3" title="">
+                                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                                <li class="swiper-slide">
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>FEB <br><strong>02</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>2026-1학기 수강신청 기간(재학생)</p>
+                                                                <span>02.02 (월) ~ 02.06 (금)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>FEB <br><strong>12</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>2025학년도 전기 학위수여식</p>
+                                                                <span>02.12 (목)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>FEB <br><strong>19</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>2026학년도 신입생 입학식</p>
+                                                                <span>02.19 (목)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>FEB <br><strong>20</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>2026-1학기 수강신청 기간(신·편입생)</p>
+                                                                <span>02.20 (금) ~ 02.23 (월)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>FEB <br><strong>23</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>재학생 등록기간</p>
+                                                                <span>02.23 (월) ~ 02.27 (금)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>FEB <br><strong>23</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>조기졸업 신청 기간</p>
+                                                                <span>02.23 (월) ~ 02.27 (금)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>FEB <br><strong>24</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>교원상견례 및 연수</p>
+                                                                <span>02.24 (화)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>FEB <br><strong>24</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>2026-1학기 수강신청 정정 기간(전체)</p>
+                                                                <span>02.24 (화) ~ 03.09 (월)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="date">
+                                                        <a href="#n">
+                                                            <h4>FEB <br><strong>24</strong></h4>
+                                                            <div class="date_cnt">
+                                                                <p>	졸업이수학점 확인 기간</p>
+                                                                <span>02.24 (화) ~ 03.09 (월)</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </li> 
+                                            </ul>
+                                            <div class="calen_btn">
+                                                <button class="btn_prev"><span class="blind">이전버튼</span></button>
+                                                <button class="btn_next"><span class="blind">다음버튼</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="more"><a href="#n"><span class="blind">더보기</span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> <!-- view -->
+            <section class="depart">
+                <div class="cnt_wrap">
+                    <h2>학부 탐색, <strong>BU</strong>와 함께하기</h2>
+                    <div class="shadow01">
+                        <div class="photo"></div>
+                    </div>
+                    <div class="shadow02"></div>
+                    <div class="depart_ctn"> <!-- slick에서 호출하는 이름 -->
+                        <div class="ctn_box">
+                            <div class="ctn"><div class="photo"><img src="images/depart01.jpg" alt=""></div></div>
+                            <div class="txt">
+                                <h3>기독교학부 <br><strong>Division of Christian Studies</strong></h3>
+                                <p>기독교학부는 설립정신에 따라 수준 높은 연구 활동과 수요자 중심의 교육을 통하여 진리를 탐구하고 학술을 진흥하며, 올바른 인성과 창조적 지성을 갖추고 정보화 사회 및 세계화 시대를 주도할 인재를 양성함으로써 국가와 인류 사회 발전에 기여함을 목적으로 한다.</p>
+                            </div>
+                        </div>
+                        <div class="ctn_box">
+                            <div class="ctn"><div class="photo"><img src="images/depart02.jpg" alt=""></div></div>
+                            <div class="txt">
+                                <h3>경찰학부 <br><strong>Division of Police Science</strong></h3>
+                                <p>올바른 인성을 갖추고 장차 국가와 사회를 위해 주어진 소명을 수행할 수 있는 참되고 능력 있는 전문사회인의 양성을 목적으로 하고 있다. 이를 위하여 국가와 사회 발전에 이바지할 수 있는 이론과 실무를 겸비한 범죄·치안전문가, 법률전문가, 공공행정의 유능한 전문가 양성을 위하여 체계적인 교육과정을 운영하며 그 특징은 다음과 같다.</p>
+                            </div>
+                        </div>
+                        <div class="ctn_box">
+                            <div class="ctn"><div class="photo"><img src="images/depart03.jpg" alt=""></div></div>
+                            <div class="txt">
+                                <h3>국제학부 <br><strong>Division of Global Industry</strong></h3>
+                                <p>백석대학교 국제학부는 IT융합전공, 호텔관광경영전공, 항공운항서비스전공, 글로벌셰프전공, 한국어 전공으로 이루어져있다.</p>
+                            </div>
+                        </div>
+                        <div class="ctn_box">
+                            <div class="ctn"><div class="photo"><img src="images/depart04.jpg" alt=""></div></div>
+                            <div class="txt">
+                                <h3>어문학부 <br><strong>Division of Literature</strong></h3>
+                                <p>어문학부는 국어국문학전공, 영어학전공, 일본어학전공, 중국어학전공, 러시아어학전공으로 나뉘어져 있으며, 시대와 사회가 요구하는 인재를 양성하기 위하여 한국 및 동ㆍ서양의 여러 언어와 문화 연구를 통해 인간의 정신과 삶을 이해하는 전인적 인격을 완성하고, 해외어학연수 등을 통하여 학부과정에서 세계 진출의 첫걸음을 내딛을 수 있는 기회를 마련하여 지구촌 어디에서나 활용 가능한 실용적ㆍ전문적 언어구사 능력을 갖춘 언어 전문인을 양성하고자 합니다.</p>
+                            </div>
+                        </div>
+                        <div class="ctn_box">
+                            <div class="ctn"><div class="photo"><img src="images/depart05.jpg" alt=""></div></div>
+                            <div class="txt">
+                                <h3>간호학과 <br><strong>Division of Nursing Science</strong></h3>
+                                <p>기독교 정신을 바탕으로 대상자의 건강 회복, 질병 예방, 건강 유지 및 증진을 위해 필요한 간호지식과 기술, 나눔과 섬김의 자세를 갖춘 전문직 간호사를 양성한다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shadow03"></div>
+                    <div class="shadow04"></div>
+                    <div class="more"><a href="#n"><span>전체보기</span></a></div>
+                    <button class="btn_prev"><span class="blind">이전버튼</span></button>
+                    <button class="btn_next"><span class="blind">다음버튼</span></button>
+                </div>
+            </section> <!-- depart -->
             <section class="infogra"></section> <!-- infogra -->
             <section class="visit"></section> <!-- visit -->
         </div>

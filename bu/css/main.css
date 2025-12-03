@@ -14,3 +14,576 @@
 @import url(common.css);
 @import url(layout.css);
 
+.visual {
+    height: 100dvh;
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: var(--color-w);
+    position: relative; /* scroll_down 정렬의 기준 */
+}
+.visual .txt {
+    padding-top: 35%;
+}
+.visual .txt h2 {
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-w);
+    margin-top: 7px;
+}
+.visual .scroll_down {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 6%;
+}
+.visual .scroll_down span {
+    position: relative; /* after 정렬의 기준 */
+}
+.visual .scroll_down span::after {
+    content: "";
+    position: absolute; /* span을 기준으로 정렬 */
+    left: 29px;
+    bottom:  -23px;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 13px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 13' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.14583 10.1452L11.2292 6.06185C11.3958 5.89518 11.5903 5.81532 11.8125 5.82226C12.0347 5.82921 12.2292 5.91601 12.3958 6.08268C12.5486 6.24935 12.6285 6.44379 12.6354 6.66601C12.6424 6.88824 12.5625 7.08268 12.3958 7.24935L6.89583 12.7493C6.8125 12.8327 6.72222 12.8917 6.625 12.9264C6.52778 12.9612 6.42361 12.9785 6.3125 12.9785C6.20139 12.9785 6.09722 12.9612 6 12.9264C5.90278 12.8917 5.8125 12.8327 5.72917 12.7493L0.229167 7.24935C0.0763889 7.09657 0 6.9056 0 6.67643C0 6.44727 0.0763889 6.24935 0.229167 6.08268C0.395833 5.91601 0.59375 5.83268 0.822917 5.83268C1.05208 5.83268 1.25 5.91601 1.41667 6.08268L5.47917 10.1452V0.832681C5.47917 0.596571 5.55903 0.398654 5.71875 0.238931C5.87847 0.0792091 6.07639 -0.000651625 6.3125 -0.000651635C6.54861 -0.000651646 6.74653 0.079209 6.90625 0.238931C7.06597 0.398654 7.14583 0.596571 7.14583 0.832681V10.1452Z' fill-opacity='0.8'/%3E%3C/svg%3E%0A");
+    animation: scroll_down 3s infinite linear;
+}
+@keyframes scroll_down {
+    0% { transform:translateY(0) }
+    50% { transform:translateY(15px) }
+    100% { transform:translateY(0) }
+}
+
+.bookmark {
+    margin-top: 167px;
+}
+.bookmark h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-title);
+    margin-bottom: 59px;
+}
+.bookmark h2 strong {
+    color: var(--color-main);
+}
+.bookmark .list ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 44px;
+    padding-top: 15px;
+}
+.bookmark .list ul li {
+    width: 119px;
+}
+.bookmark .list ul li a {
+    display: block;
+    padding-top: 146px;
+    text-align: center;
+    position: relative;
+    transition: 0.5s;
+}
+.bookmark .list ul li a:hover {
+    transform: translateY(-20px);
+}
+.bookmark .list ul li a::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 119px;
+    height: 119px;
+    background-color: var(--color-w);
+    border-radius: 50%;
+    box-shadow: 0 0 5px 0 rgba(0, 104, 255, 0.25);
+}
+.bookmark .list ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 22px;
+    width: 70px;
+    height: 70px;
+    background: url(../images/bookmark01.svg) no-repeat center center / contain;
+}
+.bookmark .list ul li.icon02 a::after {
+    background-image: url(../images/bookmark02.svg);
+}
+.bookmark .list ul li.icon03 a::after {
+    background-image: url(../images/bookmark03.svg);
+}
+.bookmark .list ul li.icon04 a::after {
+    background-image: url(../images/bookmark04.svg);
+}
+.bookmark .list ul li.icon05 a::after {
+    background-image: url(../images/bookmark05.svg);
+}
+.bookmark .list ul li.icon06 a::after {
+    background-image: url(../images/bookmark06.svg);
+}
+.bookmark .list ul li.icon07 a::after {
+    background-image: url(../images/bookmark07.svg);
+}
+.bookmark .list ul li.icon08 a::after {
+    background-image: url(../images/bookmark08.svg);
+}
+
+.view h3 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-title);
+    margin-bottom: 25px;
+}
+.view {
+    margin-top: 152px;
+}
+
+.view h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-title);
+    margin-bottom: 45px;
+}
+.view h2 strong {
+    color: var(--color-main);
+}
+.view .view_box {
+    display: flex;
+}
+.view .view_left {
+    width: calc(62% - 60px);
+    margin-right: 125px;
+}
+.view .view_left .notice {
+    margin-bottom: 50px;
+    position: relative; /*more정렬의 기준*/
+}
+.view .view_left .notice .viewtab_list {
+    margin-bottom: 52px;
+    position: relative; /* after 정렬의 기준 */
+}
+.view .view_left .notice .viewtab_list::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -37px;
+    width: 100%;
+    height: 1px;
+    background-color: #f4f4f4;
+}
+.view .view_left .notice .viewtab_list ul {
+    display: flex;
+    gap: 10px;
+    width: calc(100% - 57px);
+    height: 50px;
+    overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
+    overflow-x: auto; /* 좌우 스크롤바 생성 */
+}
+.view .view_left .notice .viewtab_list ul::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+.view .view_left .notice .viewtab_list ul::-webkit-scrollbar-thumb {
+    height: 30%;
+    background: var(--color-main);
+    border-radius: 10px;
+}
+.view .view_left .notice .viewtab_list ul::-webkit-scrollbar-track {
+    background-color: var(--color-bg);
+}
+.view .view_left .notice .viewtab_list ul li button {
+    display: block;
+    font-size: 19px;
+    padding: 3px 23px;
+    background-color: var(--color-bg);
+    border-radius: 30px;
+}
+.view .view_left .notice .viewtab_list ul li.active button {
+    font-weight: 700;
+    color: var(--color-w);
+    background-color: var(--color-main);
+}
+.view .view_left .notice .viewtab_cont .tab_item {
+    display: none;
+}
+.view .view_left .notice .viewtab_cont .tab_item.active {
+    display: block;
+}
+.view .view_left .notice .viewtab_cont .tab_item .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 0 13px 20px;
+    position: relative; /* before 정렬의 기준 */
+}
+.view .view_left .notice .viewtab_cont .tab_item .list ul li a::before {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7px;
+    height: 7px;
+    background-color: var(--color-main);
+    border-radius: 50%;
+}
+.view .view_left .notice .viewtab_cont .tab_item .list ul li a p {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.view .view_left .notice .viewtab_cont .tab_item .list ul li a span {
+    color: #555;
+    padding-left: 43px;
+}
+.view .view_left .notice .viewtab_cont .tab_item .more {
+    position: absolute; /* notice를 기준으로 정렬 */
+    right: 0;
+    top: 65px;
+    padding-left: 27px;
+}
+.view .view_left .notice .viewtab_cont .tab_item .more a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-bg);
+    border-radius: 50%;
+    position: relative; /* before 정렬의 기준 */
+}
+.view .view_left .notice .viewtab_cont .tab_item .more a::before {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 6px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 13px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='%23101828' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 6.66667H0.833333C0.597222 6.66667 0.399306 6.58681 0.239583 6.42708C0.0798611 6.26736 0 6.06944 0 5.83333C0 5.59722 0.0798611 5.39931 0.239583 5.23958C0.399306 5.07986 0.597222 5 0.833333 5H5V0.833333C5 0.597222 5.07986 0.399306 5.23958 0.239583C5.39931 0.0798611 5.59722 0 5.83333 0C6.06944 0 6.26736 0.0798611 6.42708 0.239583C6.58681 0.399306 6.66667 0.597222 6.66667 0.833333V5H10.8333C11.0694 5 11.2674 5.07986 11.4271 5.23958C11.5868 5.39931 11.6667 5.59722 11.6667 5.83333C11.6667 6.06944 11.5868 6.26736 11.4271 6.42708C11.2674 6.58681 11.0694 6.66667 10.8333 6.66667H6.66667V10.8333C6.66667 11.0694 6.58681 11.2674 6.42708 11.4271C6.26736 11.5868 6.06944 11.6667 5.83333 11.6667C5.59722 11.6667 5.39931 11.5868 5.23958 11.4271C5.07986 11.2674 5 11.0694 5 10.8333V6.66667Z' /%3E%3C/svg%3E%0A");
+}
+.view .view_left .news {
+    position: relative; /* more기준의 정렬 */
+}
+.view .view_left .news .swiper-slide a {
+    display: block;
+}
+.view .view_left .news .swiper-slide a .photo {
+    width: 100%;
+    height: 236px;
+    overflow: hidden;
+}
+.view .view_left .news .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    border: 1px solid #f4f4f4;
+    border-radius: 17px;
+}
+.view .view_left .news .swiper-slide a h4 {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-title);
+    margin: 25px 0 9px 0;
+}
+.view .view_left .news .swiper-slide a p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.view .view_left .news .more {
+    position: absolute;
+    right: 0;
+    top: 4px;
+}
+.view .view_left .news .more a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-bg);
+    border-radius: 50%;
+    position: relative; /* before 정렬의 기준 */
+}
+.view .view_left .news .more a::before {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 6px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 13px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='%23101828' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 6.66667H0.833333C0.597222 6.66667 0.399306 6.58681 0.239583 6.42708C0.0798611 6.26736 0 6.06944 0 5.83333C0 5.59722 0.0798611 5.39931 0.239583 5.23958C0.399306 5.07986 0.597222 5 0.833333 5H5V0.833333C5 0.597222 5.07986 0.399306 5.23958 0.239583C5.39931 0.0798611 5.59722 0 5.83333 0C6.06944 0 6.26736 0.0798611 6.42708 0.239583C6.58681 0.399306 6.66667 0.597222 6.66667 0.833333V5H10.8333C11.0694 5 11.2674 5.07986 11.4271 5.23958C11.5868 5.39931 11.6667 5.59722 11.6667 5.83333C11.6667 6.06944 11.5868 6.26736 11.4271 6.42708C11.2674 6.58681 11.0694 6.66667 10.8333 6.66667H6.66667V10.8333C6.66667 11.0694 6.58681 11.2674 6.42708 11.4271C6.26736 11.5868 6.06944 11.6667 5.83333 11.6667C5.59722 11.6667 5.39931 11.5868 5.23958 11.4271C5.07986 11.2674 5 11.0694 5 10.8333V6.66667Z' /%3E%3C/svg%3E%0A");
+}
+.view .view_right {
+    width: calc(38% - 40px);
+}
+.view .view_right .calendar {
+    position: relative; /* caletab_list정렬의 기준 */
+}
+.view .view_right .calendar .caletab_list {
+    position: absolute; /* calendar를 기준으로 정렬 */
+    right: 0;
+    top: 12px;
+    margin-right: 52px;
+}
+.view .view_right .calendar .caletab_list ul {
+    display: flex;
+    gap: 0 18px;
+}
+.view .view_right .calendar .caletab_list ul li button {
+    display: block;
+    position: relative;
+}
+.view .view_right .calendar .caletab_list ul li.active button {
+    font-weight: 700;
+    color: var(--color-main);
+}
+.view .view_right .calendar .caletab_list ul li.active button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-main);
+}
+.view .view_right .calendar .caletab_cont .tab_item {
+    display: none;
+}
+.view .view_right .calendar .caletab_cont .tab_item.active {
+    display: block;
+}
+.view .view_right .calendar .caletab_cont .tab_item .swiper-slide .date {
+    border-bottom: 1px solid #f4f4f4;
+}
+.view .view_right .calendar .caletab_cont .tab_item .swiper-slide .date:last-child {
+    border: 0;
+}
+.view .view_right .calendar .caletab_cont .tab_item .swiper-slide .date a {
+    display: flex;
+    align-items: center;
+    gap: 0 27px;
+    padding: 29px 0;
+}
+.view .view_right .calendar .caletab_cont .tab_item .swiper-slide .date a h4 {
+    width: 84px;
+    height: 84px;
+    background-color: var(--color-bg);
+    border-radius: 30px;
+    text-align: center;
+    padding: 13px;
+}
+.view .view_right .calendar .caletab_cont .tab_item .swiper-slide .date a h4 strong {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-main);
+}
+.view .view_right .calendar .caletab_cont .tab_item .swiper-slide .date a p {
+    font-size: 20px;
+    font-weight: 700;
+}
+.view .view_right .calendar .caletab_cont .tab_item .swiper-slide .date a span {
+    color: #555;
+}
+.view .view_right .calendar .caletab_cont .tab_item .calen_btn {
+    display: flex;
+    justify-content: center;
+    gap: 0 5px;
+    margin-top: 16px;
+}
+.view .view_right .calendar .caletab_cont .tab_item .calen_btn button {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-bg);
+    border-radius: 50%;
+    position: relative; /* before 정렬의 기준 */
+}
+.view .view_right .calendar .caletab_cont .tab_item .calen_btn button::before {
+    content: "";
+    position: absolute; /* button를 기준으로 정렬 */
+    left: 6px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 7px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 6 10' fill='%23101828' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97917 4.64583L5.22917 7.89583C5.38194 8.04861 5.45833 8.24306 5.45833 8.47917C5.45833 8.71528 5.38194 8.90972 5.22917 9.0625C5.07639 9.21528 4.88194 9.29167 4.64583 9.29167C4.40972 9.29167 4.21528 9.21528 4.0625 9.0625L0.229167 5.22917C0.145833 5.14583 0.0868056 5.05556 0.0520833 4.95833C0.0173611 4.86111 0 4.75694 0 4.64583C0 4.53472 0.0173611 4.43056 0.0520833 4.33333C0.0868056 4.23611 0.145833 4.14583 0.229167 4.0625L4.0625 0.229167C4.21528 0.0763889 4.40972 0 4.64583 0C4.88194 0 5.07639 0.0763889 5.22917 0.229167C5.38194 0.381944 5.45833 0.576389 5.45833 0.8125C5.45833 1.04861 5.38194 1.24306 5.22917 1.39583L1.97917 4.64583Z' /%3E%3C/svg%3E%0A");
+}
+.view .view_right .calendar .caletab_cont .tab_item .calen_btn button.btn_next::before {
+    transform: rotate(180deg);
+}
+.view .view_right .calendar .caletab_cont .more {
+    position: absolute;
+    right: 0;
+    top: 6px;
+}
+.view .view_right .calendar .caletab_cont .more a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-bg);
+    border-radius: 50%;
+    position: relative; /* before 정렬의 기준 */
+}
+.view .view_right .calendar .caletab_cont .more a::before {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 6px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 13px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='%23101828' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 6.66667H0.833333C0.597222 6.66667 0.399306 6.58681 0.239583 6.42708C0.0798611 6.26736 0 6.06944 0 5.83333C0 5.59722 0.0798611 5.39931 0.239583 5.23958C0.399306 5.07986 0.597222 5 0.833333 5H5V0.833333C5 0.597222 5.07986 0.399306 5.23958 0.239583C5.39931 0.0798611 5.59722 0 5.83333 0C6.06944 0 6.26736 0.0798611 6.42708 0.239583C6.58681 0.399306 6.66667 0.597222 6.66667 0.833333V5H10.8333C11.0694 5 11.2674 5.07986 11.4271 5.23958C11.5868 5.39931 11.6667 5.59722 11.6667 5.83333C11.6667 6.06944 11.5868 6.26736 11.4271 6.42708C11.2674 6.58681 11.0694 6.66667 10.8333 6.66667H6.66667V10.8333C6.66667 11.0694 6.58681 11.2674 6.42708 11.4271C6.26736 11.5868 6.06944 11.6667 5.83333 11.6667C5.59722 11.6667 5.39931 11.5868 5.23958 11.4271C5.07986 11.2674 5 11.0694 5 10.8333V6.66667Z' /%3E%3C/svg%3E%0A");
+}
+
+.depart {
+    margin-top: 114px;
+    background: url(../images/depart_bg.jpg) no-repeat center center / cover;
+    color: var(--color-w);
+    padding: 154px 0 101px 0;
+}
+.depart h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 48px;
+}
+.depart h2 strong {
+    color: #EEF7FF;
+}
+.depart .cnt_wrap .depart_ctn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.depart .cnt_wrap .slick-slide {
+    opacity: 0;
+    transition: 0.5s;
+}
+.depart .cnt_wrap .slick-slide.slick-active {
+    opacity: 1;
+}
+.depart .cnt_wrap .depart_ctn .slick-dots {
+    display: none !important;
+}
+.depart .cnt_wrap .depart_ctn .ctn_box {
+    position: relative;
+    width: 827px !important;
+    background-color: var(--color-w);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.depart .cnt_wrap .depart_ctn .ctn_box .ctn {
+    width: 46%;
+}
+.depart .cnt_wrap .depart_ctn .ctn_box .photo {
+    width: auto;
+    height: 374px;
+    overflow: hidden;
+}
+.depart .cnt_wrap .depart_ctn .ctn_box .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+.depart .cnt_wrap .depart_ctn .ctn_box .txt {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 54%;
+    color: var(--color-basic);
+    padding: 80px 45px;
+}
+.depart .cnt_wrap .depart_ctn .ctn_box .txt h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-title);
+    margin-bottom: 21px;
+}
+.depart .cnt_wrap .depart_ctn .ctn_box .txt h3 strong {
+    color: var(--color-main);
+}
+.depart .cnt_wrap .depart_ctn .ctn_box .txt p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+}
+.depart .more {
+    display: flex;
+    justify-content: center;
+    margin-top: 51px;
+}
+.depart .more a {
+    display: block;
+    padding: 4px 39px 4px 20px;
+    background-color: var(--color-w10);
+    border: 1px solid var(--color-w);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    position: relative; /* before 정렬의 기준 */
+    transition: transform 0.5s;
+}
+.depart .more a::before {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 15px;
+    top: 6px;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 6.66667H0.833333C0.597222 6.66667 0.399306 6.58681 0.239583 6.42708C0.0798611 6.26736 0 6.06944 0 5.83333C0 5.59722 0.0798611 5.39931 0.239583 5.23958C0.399306 5.07986 0.597222 5 0.833333 5H5V0.833333C5 0.597222 5.07986 0.399306 5.23958 0.239583C5.39931 0.0798611 5.59722 0 5.83333 0C6.06944 0 6.26736 0.0798611 6.42708 0.239583C6.58681 0.399306 6.66667 0.597222 6.66667 0.833333V5H10.8333C11.0694 5 11.2674 5.07986 11.4271 5.23958C11.5868 5.39931 11.6667 5.59722 11.6667 5.83333C11.6667 6.06944 11.5868 6.26736 11.4271 6.42708C11.2674 6.58681 11.0694 6.66667 10.8333 6.66667H6.66667V10.8333C6.66667 11.0694 6.58681 11.2674 6.42708 11.4271C6.26736 11.5868 6.06944 11.6667 5.83333 11.6667C5.59722 11.6667 5.39931 11.5868 5.23958 11.4271C5.07986 11.2674 5 11.0694 5 10.8333V6.66667Z' /%3E%3C/svg%3E%0A");
+}
+.depart button {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-w10);
+    border: 1px solid var(--color-w);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    position: relative; /* before 정렬의 기준 */
+}
+.depart button::before {
+    content: "";
+    position: absolute; /* button를 기준으로 정렬 */
+    left: 6px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 7px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 6 10' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97917 4.64583L5.22917 7.89583C5.38194 8.04861 5.45833 8.24306 5.45833 8.47917C5.45833 8.71528 5.38194 8.90972 5.22917 9.0625C5.07639 9.21528 4.88194 9.29167 4.64583 9.29167C4.40972 9.29167 4.21528 9.21528 4.0625 9.0625L0.229167 5.22917C0.145833 5.14583 0.0868056 5.05556 0.0520833 4.95833C0.0173611 4.86111 0 4.75694 0 4.64583C0 4.53472 0.0173611 4.43056 0.0520833 4.33333C0.0868056 4.23611 0.145833 4.14583 0.229167 4.0625L4.0625 0.229167C4.21528 0.0763889 4.40972 0 4.64583 0C4.88194 0 5.07639 0.0763889 5.22917 0.229167C5.38194 0.381944 5.45833 0.576389 5.45833 0.8125C5.45833 1.04861 5.38194 1.24306 5.22917 1.39583L1.97917 4.64583Z' /%3E%3C/svg%3E%0A");
+}
+.depart button.btn_next::before {
+    transform: rotate(180deg);
+}
+
+.slick-arrow {
+    display: none !important;
+}
+
+
