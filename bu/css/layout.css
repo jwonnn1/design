@@ -5,6 +5,269 @@
 * 설  명 : header/footer 스타일을 선언
 **************************/
 
+
 footer {
-    margin-top: 500px;
+    background-color: var(--color-basic);
+    color: var(--color-w);
 }
+footer .footer_top .top_wrap {
+    display: flex;
+    justify-content: space-between;
+
+    position: relative; /* inner_box 정렬의 기준 */
+    
+}
+footer .footer_top .top_wrap .top_inner {
+    width: 50%;
+}
+footer .footer_top .top_wrap .top_inner > a {
+    display: block;
+    padding: 30px var(--wrapper-margin);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    background-color: var(--color-main);
+    
+    border-right: 1px solid var(--color-w30);
+    position: relative; /* after 정렬의 기준 */
+}
+footer .footer_top .top_wrap .top_inner.active > a {
+    background-color: var(--color-basic);
+}
+footer .footer_top .top_wrap .top_inner.top_l > a {
+    border-right: none;
+}
+footer .footer_top .top_wrap .top_inner > a::after {
+    content: "";
+    position: absolute;
+    right: var(--wrapper-margin);
+    top: 25px;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--color-w);
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 6' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.10431 4.40569L9.35056 0.159687C9.44406 0.06602 9.55881 0.0160199 9.69481 0.00968652C9.83064 0.00318652 9.95173 0.0531866 10.0581 0.159687C10.1646 0.26602 10.2178 0.383937 10.2178 0.513437C10.2178 0.642937 10.1646 0.760854 10.0581 0.867188L5.66981 5.25569C5.58248 5.34285 5.49331 5.4041 5.40231 5.43944C5.31131 5.4746 5.21198 5.49219 5.10431 5.49219C4.99664 5.49219 4.89731 5.4746 4.80631 5.43944C4.71531 5.4041 4.62615 5.34285 4.53881 5.25569L0.150561 0.867188C0.056894 0.773688 0.00689396 0.658938 0.000560623 0.522938C-0.00593938 0.387104 0.0440606 0.26602 0.150561 0.159687C0.256894 0.053187 0.374811 -6.20052e-05 0.504311 -6.20109e-05C0.633811 -6.20165e-05 0.751729 0.053187 0.858062 0.159687L5.10431 4.40569Z' /%3E%3C/svg%3E%0A");
+}
+footer .footer_top .top_wrap .top_inner.active > a::after {
+    background-size: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 9' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.68596 4.39348L0.150426 0.857951C0.0502523 0.757777 0.000224563 0.639867 0.000342416 0.50422C0.000460269 0.368574 0.0506649 0.250605 0.150956 0.150313C0.251247 0.0500221 0.369039 -5.37631e-06 0.504332 0.000230325C0.639625 0.000466026 0.757359 0.0506703 0.857533 0.150844L4.39307 3.68638L7.9286 0.150844C8.02877 0.0506703 8.14668 0.000642847 8.28233 0.000760701C8.41798 0.000878554 8.53595 0.0510828 8.63624 0.151374C8.73653 0.251665 8.78656 0.369458 8.78632 0.504751C8.78609 0.640044 8.73588 0.757777 8.63571 0.857951L5.10017 4.39348L8.63571 7.92902C8.73588 8.02919 8.78591 8.1471 8.78579 8.28275C8.78567 8.4184 8.73547 8.53636 8.63518 8.63666C8.53489 8.73695 8.41709 8.78697 8.2818 8.78674C8.14651 8.7865 8.02877 8.7363 7.9286 8.63612L4.39307 5.10059L0.857533 8.63612C0.757359 8.7363 0.639449 8.78633 0.503802 8.78621C0.368156 8.78609 0.250187 8.73589 0.149895 8.63559C0.0496041 8.5353 -0.000423187 8.41751 -0.000187486 8.28222C4.82149e-05 8.14693 0.0502523 8.02919 0.150426 7.92902L3.68596 4.39348Z' /%3E%3C/svg%3E%0A");
+}
+footer .footer_top .top_wrap .top_inner .inner_box {
+    display: none;
+    padding: 45px 0 92px 0;
+    background: var(--color-basic);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+}
+footer .footer_top .top_wrap.open .top_inner.active .inner_box {
+    display: block;
+}
+footer .footer_top .top_wrap .top_inner .inner_box .inner_cont > a {
+    display: block;
+    font-size: 32px;
+    line-height: 1.3;
+    margin-bottom: 45px;
+}
+footer .footer_top .top_wrap .top_inner .inner_box ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+footer .footer_top .top_wrap .top_inner .inner_box ul li {
+    width: 25%;
+}
+footer .footer_top .top_wrap .top_inner .inner_box ul li > a {
+    display: block;
+    padding: 17px 0;
+}
+footer .footer_bottom {
+    color: var(--color-w80);
+    position: relative;
+}
+footer .footer_bottom .wrapper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 142px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-w30);
+}
+footer .footer_bottom .main_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 99px;
+    padding-bottom: 66px;
+}
+footer .footer_bottom .main_box .f_info,
+footer .footer_bottom .main_box .f_ser {
+    width: 50%;
+}
+footer .footer_bottom .main_box .f_info .f_logo {
+    width: 250px;
+    height: 67px;
+    background: url(../images/f_logo.svg) no-repeat center center /contain;
+    margin-bottom: 34px;
+}
+footer .footer_bottom .main_box .f_info strong {
+    font-weight: 700;
+}
+footer .footer_bottom .main_box .f_ser {
+    color: var(--color-w);
+    margin-left: 30px;
+}
+footer .footer_bottom .main_box .f_ser h2 {
+    font-size: 28px;
+    margin-bottom: 19px;
+}
+footer .footer_bottom .main_box .f_ser .list_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+footer .footer_bottom .main_box .f_ser .ser_list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+}
+footer .footer_bottom .main_box .f_ser .ser_list ul li a {
+    display: inline-block;
+    border: 1px solid var(--color-w80);
+    border-radius: 10px;
+    width: 288px;
+    height: 66px;
+    padding: 20px 0 20px 30px;
+
+    position: relative;
+}
+footer .footer_bottom .main_box .f_ser .ser_list ul li a::before {
+    content: "";
+    position: absolute;
+    right: 30px;
+    top: 21px;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 11' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.8125 2.83333L1.39583 10.25C1.24306 10.4028 1.04861 10.4792 0.8125 10.4792C0.576389 10.4792 0.381944 10.4028 0.229167 10.25C0.0763889 10.0972 0 9.90278 0 9.66667C0 9.43056 0.0763889 9.23611 0.229167 9.08333L7.64583 1.66667H1.3125C1.07639 1.66667 0.878472 1.58681 0.71875 1.42708C0.559028 1.26736 0.479167 1.06944 0.479167 0.833333C0.479167 0.597222 0.559028 0.399306 0.71875 0.239583C0.878472 0.0798611 1.07639 0 1.3125 0H9.64583C9.88194 0 10.0799 0.0798611 10.2396 0.239583C10.3993 0.399306 10.4792 0.597222 10.4792 0.833333V9.16667C10.4792 9.40278 10.3993 9.6007 10.2396 9.76042C10.0799 9.92014 9.88194 10 9.64583 10C9.40972 10 9.21181 9.92014 9.05208 9.76042C8.89236 9.6007 8.8125 9.40278 8.8125 9.16667V2.83333Z' fill-opacity='0.8'/%3E%3C/svg%3E%0A");
+}
+footer .footer_bottom .main_box .f_ser .ser_list ul li a:hover {
+    background-color: var(--color-main);
+    border-color: var(--color-main);
+}
+footer .footer_bottom .main_box .f_ser .ser_list ul li a:hover::before {
+    right: 25px;
+    top: 16px;
+}
+footer .footer_bottom .main_box .f_ser .list_wrap .photo {
+    width: 73px;
+    height: 67px;
+    overflow: hidden;
+}
+footer .footer_bottom .main_box .f_ser .list_wrap .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+footer .footer_bottom .sub_box {
+    padding: 29px 0 41px 0;
+}
+footer .footer_bottom .sub_box .f_info {
+    margin-bottom: 19px;
+}
+footer .footer_bottom .sub_box .f_info ul {
+    display: flex;
+    gap: 0 29px;
+}
+footer .footer_bottom .sub_box .f_info ul li:first-child {
+    font-weight: 700;
+    color: var(--color-main);
+}
+footer .footer_bottom .sub_box .copyright {
+    color: var(--color-w60);
+}
+@media screen and (max-width:768px){
+        footer .footer_bottom .wrapper::before {
+            bottom: auto;
+            top: 149px;
+        }
+        footer .footer_bottom .main_box {
+            display: block;
+            margin-top: 72px;
+            padding-bottom: 78px;
+            border-bottom: 1px solid var(--color-w30);
+        }
+        footer .footer_bottom .main_box .f_info,
+        footer .footer_bottom .main_box .f_ser {
+            width: auto;
+        }
+        footer .footer_bottom .main_box .f_info .f_logo {
+            width: 152px;
+            height: 41px;
+            margin-bottom: 20px;
+        }
+        footer .footer_bottom .main_box .f_ser {
+            margin: 75px 0 0 0;
+        }
+        footer .footer_bottom .main_box .f_ser h2 {
+            font-size: 24px;
+            margin-bottom: 19px;
+        }
+        footer .footer_bottom .main_box .f_ser .list_wrap {
+            display: block;
+            position: relative;
+        }
+        footer .footer_bottom .main_box .f_ser .ser_list {
+            margin-bottom: 29px;
+        }
+        footer .footer_bottom .main_box .f_ser .ser_list ul li a {
+            display: block;
+            width: auto;
+        }
+        footer .footer_bottom .main_box .f_ser .list_wrap .photo {
+            width: 60px;
+            height: 55px;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        footer .footer_bottom .sub_box {
+            padding: 44px 0 57px 0;
+        }
+        footer .footer_bottom .sub_box .f_info {
+            margin-bottom: 19px;
+        }
+        footer .footer_bottom .sub_box .f_info ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 3px 0;
+        }
+        footer .footer_bottom .sub_box .copyright {
+            text-align: center;
+        }
+} /* @media */
+@media screen and (max-width:1024px){
+        footer .footer_bottom .wrapper::before {
+            display: none;
+        }
+        footer .footer_bottom .main_box {
+            border-bottom: 1px solid var(--color-w30);
+        }
+        footer .footer_bottom .main_box .f_info .f_logo {
+            width: 200px;
+            margin-bottom: 25px;
+        }
+        footer .footer_bottom .main_box .f_ser h2 {
+            font-size: 26px;
+        }
+        footer .footer_bottom .sub_box .f_info ul {
+            flex-wrap: wrap;
+        }
+} 

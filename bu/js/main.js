@@ -90,6 +90,17 @@ $(document).ready(function(){
 
     const calendar_swiper = new Swiper('.calendar .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 0, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            769: {    /* 640px 이상일때 적용 */
+                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 16,
+                freeMode: true,
+            },
+        },
+        
+
         navigation: {  /* 이전, 다음 버튼 */
 		nextEl: '.calendar .btn_next',  /* 다음 버튼의 클래스명 */
 		prevEl: '.calendar .btn_prev',  
@@ -220,6 +231,24 @@ $(document).ready(function(){
 
     /* infogra counter - 끝 */
 
-    
+    /* quick - 시작 */
+
+    $('aside.quick .quick_open').on('click', function(){
+		$('aside.quick').addClass('open')
+		$('aside.quick .quick_wrap').slideDown()
+	})
+	$('aside.quick .quick_close').on('click', function(){
+		$('aside.quick').removeClass('open')
+		$('aside.quick .quick_wrap').slideUp()
+	})
+
+    /* top버튼을 클릭하면 상단으로 이동 */ 
+    $('aside.quick .btn_top .top').on('click', function(){
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500) //브라우저를 최상단으로 0.5초만에 올림
+    })
+
+    /* quick - 끝 */
 
 }) //맨끝
